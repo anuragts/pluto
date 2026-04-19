@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "demo_merge_preview_001",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": "demo/session-preview-qa",
+  "title": "Preview environment deployment",
+  "createdAt": "2026-04-19T08:05:00.000Z",
+  "updatedAt": "2026-04-19T08:05:00.000Z",
+  "source": "opencode-local",
+  "status": "finalized",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "Prepared the demo deployment config for preview environments with branch-scoped review apps and lighter validation.",
+  "goal": "Make the deployment demo support quick QA preview environments for feature branches.",
+  "changesMade": [
+    "Changed the demo deployment strategy to preview",
+    "Targeted the deployment at qa-preview",
+    "Added branch-scoped review-app naming and lighter verification"
+  ],
+  "features": [
+    {
+      "name": "review app preview rollout",
+      "why": "Enable QA and stakeholders to validate feature branches without promoting directly to production.",
+      "status": "done",
+      "files": [
+        "fixtures/merge-conflict-demo/deploy-config.json"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Prefer preview-first validation over production hardening",
+      "why": "For branch previews, speed and easy teardown matter more than blue-green production guarantees.",
+      "files": [
+        "fixtures/merge-conflict-demo/deploy-config.json"
+      ]
+    }
+  ],
+  "blockers": [],
+  "openQuestions": [
+    "Should preview environments auto-expire after merge or stay until manually removed?"
+  ],
+  "testsRun": [
+    "manual review of deploy-config structure"
+  ],
+  "toolsUsed": [
+    {
+      "name": "edit",
+      "count": 2
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "fixtures/merge-conflict-demo/deploy-config.json",
+      "count": 4
+    },
+    {
+      "path": "MERGE_CONFLICT_DEMO.md",
+      "count": 1
+    }
+  ],
+  "resumePrompt": "Continue the preview deployment path. Preserve review-app behavior, qa-preview targeting, and fast validation when resolving conflicts."
+}

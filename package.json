@@ -1,0 +1,17 @@
+{
+  "name": "opencode-repo-handoffs",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "bun@1.3.12",
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@opencode-ai/plugin": "^1.14.17",
+    "@types/node": "^24.6.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

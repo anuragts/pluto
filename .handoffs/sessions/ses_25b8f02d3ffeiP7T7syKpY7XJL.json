@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "ses_25b8f02d3ffeiP7T7syKpY7XJL",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": null,
+  "title": "Getting context from other sessions",
+  "createdAt": "2026-04-19T06:32:41.516Z",
+  "updatedAt": "2026-04-19T06:39:52.758Z",
+  "source": "opencode-local",
+  "status": "draft",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "get context of other sessions",
+  "changesMade": [],
+  "features": [],
+  "decisions": [],
+  "blockers": [],
+  "openQuestions": [],
+  "testsRun": [],
+  "toolsUsed": [],
+  "filesTouched": [],
+  "resumePrompt": "get context of other sessions"
+}

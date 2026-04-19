@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "ses_25b9aa596ffeadBO7fymMTBmLB",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": null,
+  "title": "Project overview question",
+  "createdAt": "2026-04-19T06:19:58.953Z",
+  "updatedAt": "2026-04-19T06:20:36.605Z",
+  "source": "opencode-local",
+  "status": "draft",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "what is this project about",
+  "changesMade": [],
+  "features": [],
+  "decisions": [],
+  "blockers": [],
+  "openQuestions": [],
+  "testsRun": [],
+  "toolsUsed": [],
+  "filesTouched": [],
+  "resumePrompt": "what is this project about"
+}

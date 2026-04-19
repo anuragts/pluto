@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "ses_25bba1990ffekYhB0DisffMNGw",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": null,
+  "title": "New session - 2026-04-19T05:45:37.647Z",
+  "createdAt": "2026-04-19T05:45:37.647Z",
+  "updatedAt": "2026-04-19T05:45:37.685Z",
+  "source": "opencode-local",
+  "status": "draft",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "clear",
+  "changesMade": [],
+  "features": [],
+  "decisions": [],
+  "blockers": [],
+  "openQuestions": [],
+  "testsRun": [],
+  "toolsUsed": [],
+  "filesTouched": [],
+  "resumePrompt": "clear"
+}

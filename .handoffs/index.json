@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "updatedAt": "2026-04-19T07:02:39.144Z",
+  "sessions": {
+    "example-auto-backfill": {
+      "sessionId": "example-auto-backfill",
+      "title": "Add automatic handoff backfill scheduling",
+      "branch": null,
+      "updatedAt": "2026-04-19T06:35:00.000Z",
+      "status": "finalized",
+      "filesTouched": [
+        {
+          "path": "src/handoffs/service.ts",
+          "count": 5
+        },
+        {
+          "path": "tests/handoffs.test.ts",
+          "count": 4
+        },
+        {
+          "path": "src/handoffs/types.ts",
+          "count": 1
+        },
+        {
+          "path": "CHAT_SUMMARY.md",
+          "count": 1
+        }
+      ],
+      "keywords": [
+        "10",
+        "add",
+        "automatic",
+        "backfill",
+        "background",
+        "command",
+        "current",
+        "every",
+        "handoff",
+        "interval",
+        "manual",
+        "minutes",
+        "open",
+        "overlap",
+        "scheduling",
+        "session",
+        "startup",
+        "still",
+        "test"
+      ]
+    },
+    "ses_25b8f02d3ffeiP7T7syKpY7XJL": {
+      "sessionId": "ses_25b8f02d3ffeiP7T7syKpY7XJL",
+      "title": "Getting context from other sessions",
+      "branch": null,
+      "updatedAt": "2026-04-19T06:39:52.758Z",
+      "status": "draft",
+      "filesTouched": [],
+      "keywords": [
+        "context",
+        "from",
+        "get",
+        "getting",
+        "of",
+        "other",
+        "sessions"
+      ]
+    },
+    "ses_25b95914fffeTUs9uLqQEJ9gCj": {
+      "sessionId": "ses_25b95914fffeTUs9uLqQEJ9gCj",
+      "title": "Add Bun and opencode testing plan",
+      "branch": null,
+      "updatedAt": "2026-04-19T06:28:28.433Z",
+      "status": "draft",
+      "filesTouched": [],
+      "keywords": [
+        "add",
+        "and",
+        "as",
+        "bun",
+        "chatsummrey",
+        "how",
+        "manager",
+        "md",
+        "opencode",
+        "package",
+        "plan",
+        "read",
+        "test",
+        "testing",
+        "this",
+        "to",
+        "with"
+      ]
+    },
+    "ses_25b9aa596ffeadBO7fymMTBmLB": {
+      "sessionId": "ses_25b9aa596ffeadBO7fymMTBmLB",
+      "title": "Project overview question",
+      "branch": null,
+      "updatedAt": "2026-04-19T06:20:36.605Z",
+      "status": "draft",
+      "filesTouched": [],
+      "keywords": [
+        "about",
+        "is",
+        "overview",
+        "project",
+        "question",
+        "this",
+        "what"
+      ]
+    },
+    "ses_25bb946f4ffeK8FC9Gl0ewM5Kn": {
+      "sessionId": "ses_25bb946f4ffeK8FC9Gl0ewM5Kn",
+      "title": "Conversation clear and concise",
+      "branch": null,
+      "updatedAt": "2026-04-19T06:19:41.673Z",
+      "status": "draft",
+      "filesTouched": [],
+      "keywords": [
+        "and",
+        "clear",
+        "concise",
+        "conversation"
+      ]
+    },
+    "ses_25bba1990ffekYhB0DisffMNGw": {
+      "sessionId": "ses_25bba1990ffekYhB0DisffMNGw",
+      "title": "New session - 2026-04-19T05:45:37.647Z",
+      "branch": null,
+      "updatedAt": "2026-04-19T05:45:37.685Z",
+      "status": "draft",
+      "filesTouched": [],
+      "keywords": [
+        "-",
+        "2026-04-19t05",
+        "37.647z",
+        "45",
+        "clear",
+        "new",
+        "session"
+      ]
+    },
+    "ses_25b7f801fffexEzFA6OG5pKcHW": {
+      "sessionId": "ses_25b7f801fffexEzFA6OG5pKcHW",
+      "title": "Previous session topic recall",
+      "branch": null,
+      "updatedAt": "2026-04-19T06:59:37.860Z",
+      "status": "draft",
+      "filesTouched": [],
+      "keywords": [
+        "about",
+        "last",
+        "previous",
+        "recall",
+        "session",
+        "topic",
+        "was",
+        "what"
+      ]
+    },
+    "ses_25b86f7bfffeKo2HR3C8k4qTR1": {
+      "sessionId": "ses_25b86f7bfffeKo2HR3C8k4qTR1",
+      "title": "How backtracking works in agents",
+      "branch": null,
+      "updatedAt": "2026-04-19T06:41:45.938Z",
+      "status": "draft",
+      "filesTouched": [],
+      "keywords": [
+        "agents",
+        "backtracking",
+        "can",
+        "hi",
+        "how",
+        "in",
+        "search",
+        "works",
+        "you"
+      ]
+    },
+    "ses_25b7535d1ffe4Is5NNlHq60EMU": {
+      "sessionId": "ses_25b7535d1ffe4Is5NNlHq60EMU",
+      "title": "Interpret session ID and resume context",
+      "branch": null,
+      "updatedAt": "2026-04-19T07:01:04.908Z",
+      "status": "draft",
+      "filesTouched": [],
+      "keywords": [
+        "-",
+        ".",
+        "and",
+        "are",
+        "arguments",
+        "arguments.",
+        "as",
+        "auto",
+        "by",
+        "call",
+        "conflict",
+        "context",
+        "continue",
+        "debug",
+        "either",
+        "empty",
+        "exactly",
+        "files",
+        "followed",
+        "get_context",
+        "id",
+        "ids",
+        "if",
+        "includecurrentsession",
+        "intent",
+        "interpret",
+        "it",
+        "lets",
+        "matching",
+        "merge",
+        "merged",
+        "mode",
+        "more",
+        "of",
+        "once",
+        "one",
+        "optionally",
+        "or",
+        "path",
+        "prompt",
+        "report",
+        "resume",
+        "risks",
+        "selected",
+        "ses_25bb946f4ffek8fc9gl0ewm5kn",
+        "session",
+        "the",
+        "then",
+        "this",
+        "tool",
+        "top",
+        "true",
+        "use",
+        "with"
+      ]
+    },
+    "demo_merge_prod_001": {
+      "sessionId": "demo_merge_prod_001",
+      "title": "Production deployment hardening",
+      "branch": "demo/session-prod-harden",
+      "updatedAt": "2026-04-19T08:00:00.000Z",
+      "status": "finalized",
+      "filesTouched": [
+        {
+          "path": "fixtures/merge-conflict-demo/deploy-config.json",
+          "count": 4
+        },
+        {
+          "path": "MERGE_CONFLICT_DEMO.md",
+          "count": 1
+        }
+      ],
+      "keywords": [
+        "blue-green",
+        "conflict",
+        "deploy",
+        "deployment",
+        "hardening",
+        "health-checks",
+        "production",
+        "strategy"
+      ]
+    },
+    "demo_merge_preview_001": {
+      "sessionId": "demo_merge_preview_001",
+      "title": "Preview environment deployment",
+      "branch": "demo/session-preview-qa",
+      "updatedAt": "2026-04-19T08:05:00.000Z",
+      "status": "finalized",
+      "filesTouched": [
+        {
+          "path": "fixtures/merge-conflict-demo/deploy-config.json",
+          "count": 4
+        },
+        {
+          "path": "MERGE_CONFLICT_DEMO.md",
+          "count": 1
+        }
+      ],
+      "keywords": [
+        "conflict",
+        "deploy",
+        "deployment",
+        "preview",
+        "qa",
+        "review-app",
+        "strategy",
+        "validation"
+      ]
+    }
+  },
+  "files": {
+    "src/handoffs/service.ts": [
+      "example-auto-backfill"
+    ],
+    "tests/handoffs.test.ts": [
+      "example-auto-backfill"
+    ],
+    "src/handoffs/types.ts": [
+      "example-auto-backfill"
+    ],
+    "CHAT_SUMMARY.md": [
+      "example-auto-backfill"
+    ],
+    "fixtures/merge-conflict-demo/deploy-config.json": [
+      "demo_merge_preview_001",
+      "demo_merge_prod_001"
+    ],
+    "MERGE_CONFLICT_DEMO.md": [
+      "demo_merge_preview_001",
+      "demo_merge_prod_001"
+    ]
+  }
+}

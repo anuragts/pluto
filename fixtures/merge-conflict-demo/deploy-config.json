@@ -1,0 +1,14 @@
+{
+  "service": "handoff-demo-app",
+  "owner": "platform-team",
+  "build": {
+    "command": "npm run build",
+    "outputDir": "dist"
+  },
+  "deploy": {
+    "strategy": "manual",
+    "target": "staging",
+    "healthCheckPath": "/health",
+    "verification": "smoke"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "ses_25b7535d1ffe4Is5NNlHq60EMU",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": null,
+  "title": "Interpret session ID and resume context",
+  "createdAt": "2026-04-19T07:00:52.398Z",
+  "updatedAt": "2026-04-19T07:01:04.908Z",
+  "source": "opencode-local",
+  "status": "draft",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "Interpret `ses_25bb946f4ffeK8FC9Gl0ewM5Kn of this session and lets continue it` as either:\n\n- `auto`\n- `auto merge`\n- one or more session IDs, optionally followed by `resume`, `merge`, or `debug`\n\nCall the `get_context` tool exactly once with the matching arguments.\n\nThen report:\n\n- selected session IDs\n- merged context path\n- top files\n- conflict risks\n- resume prompt\n\nIf the arguments are empty, use `mode=auto`, `intent=resume`, and `includeCurrentSession=true`.",
+  "changesMade": [],
+  "features": [],
+  "decisions": [],
+  "blockers": [],
+  "openQuestions": [],
+  "testsRun": [],
+  "toolsUsed": [],
+  "filesTouched": [],
+  "resumePrompt": "Interpret `ses_25bb946f4ffeK8FC9Gl0ewM5Kn of this session and lets continue it` as either:\n\n- `auto`\n- `auto merge`\n- one or more session IDs, optionally followed by `resume`, `merge`, or `debug`\n\nCall the `get_context` tool exactly once with the matching arguments.\n\nThen report:\n\n- selected session IDs\n- merged context path\n- top files\n- conflict risks\n- resume prompt\n\nIf the arguments are empty, use `mode=auto`, `intent=resume`, and `includeCurrentSession=true`."
+}
