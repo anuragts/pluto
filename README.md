@@ -7,6 +7,24 @@ Repo-local OpenCode handoff plugin with:
 - `/get-context` slash command
 - `/handoff-backfill` slash command
 
+## Startup behavior
+
+Automatic backfill is manual by default so `opencode .` opens quickly.
+
+Use:
+
+```bash
+/handoff-backfill 20
+```
+
+inside OpenCode when you want to import prior sessions.
+
+To temporarily enable startup/interval backfill again:
+
+```bash
+OPENCODE_HANDOFFS_AUTO_BACKFILL=1 opencode .
+```
+
 ## Files
 
 - [.opencode/plugins/handoffs.ts](./.opencode/plugins/handoffs.ts)

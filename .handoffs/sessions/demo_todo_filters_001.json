@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "demo_todo_filters_001",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": "todo/session-filter-tabs",
+  "title": "Add todo filter tabs",
+  "createdAt": "2026-04-19T09:00:00.000Z",
+  "updatedAt": "2026-04-19T09:00:00.000Z",
+  "source": "opencode-local",
+  "status": "finalized",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "Added active/completed filter tabs on branch todo/session-filter-tabs, later integrated into todo/review-toolbar where the header toolbar overlaps with bulk actions and the final conflict branch.",
+  "goal": "Make the todo list easier to scan by adding filter tabs at the top of the list.",
+  "changesMade": [
+    "Added a filter state for all, active, and completed",
+    "Changed the list rendering to show only the selected subset",
+    "Added filter buttons above the todo list"
+  ],
+  "features": [
+    {
+      "name": "todo filter tabs",
+      "why": "Reviewers often want to isolate active work items or completed items without scanning the whole list.",
+      "status": "done",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Use tab-like buttons in the main header area",
+      "why": "Filtering should be immediately visible near the task count, even in a simple demo app.",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    }
+  ],
+  "blockers": [
+    "Merging with bulk triage work changes the same header toolbar and visibleTodos flow in App.jsx."
+  ],
+  "openQuestions": [
+    "Should the selected filter persist in local storage?",
+    "Should the filter state survive when merged with search and bulk triage controls?"
+  ],
+  "testsRun": [
+    "manual browser check"
+  ],
+  "toolsUsed": [
+    {
+      "name": "edit",
+      "count": 2
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "fixtures/react-todo-conflict/src/App.jsx",
+      "count": 5
+    }
+  ],
+  "resumePrompt": "Continue the todo filter work. Preserve the all/active/completed filter UX and keep the controls near the task count when resolving conflicts on todo/review-toolbar or todo/conflict-resolution."
+}

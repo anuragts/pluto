@@ -2,6 +2,7 @@ import type { Plugin } from "@opencode-ai/plugin";
 import { HandoffService } from "../../src/handoffs/service.js";
 
 export const HandoffsPlugin: Plugin = async ({ client, worktree, directory }) => {
+  const autoBackfillEnabled = /^(1|true|yes)$/i.test(process.env.OPENCODE_HANDOFFS_AUTO_BACKFILL ?? "");
   const logger = {
     info: async (message: string, extra?: Record<string, unknown>) => {
       if (typeof client.app?.log === "function") {
@@ -44,6 +45,7 @@ export const HandoffsPlugin: Plugin = async ({ client, worktree, directory }) =>
   const service = new HandoffService({
     projectRoot: worktree || directory,
     logger,
+    autoBackfill: autoBackfillEnabled,
   });
   await service.init();
 

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "demo_todo_bulk_actions_001",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": "todo/session-bulk-actions",
+  "title": "Add bulk todo actions",
+  "createdAt": "2026-04-19T09:10:00.000Z",
+  "updatedAt": "2026-04-19T09:10:00.000Z",
+  "source": "opencode-local",
+  "status": "finalized",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "Added multi-select and bulk completion controls on branch todo/session-bulk-actions, later integrated into todo/review-toolbar where selection controls overlap with filter toolbar layout and row actions.",
+  "goal": "Support batch triage actions for review sessions where multiple tasks need the same follow-up.",
+  "changesMade": [
+    "Added row selection state separate from task completion state",
+    "Added a bulk action toolbar with mark-done and clear-selection actions",
+    "Surfaced row selection status beside each task"
+  ],
+  "features": [
+    {
+      "name": "bulk todo actions",
+      "why": "Reviewers often need to mark a group of tasks done during cleanup instead of repeating the same action row by row.",
+      "status": "done",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Keep selection separate from completion state",
+      "why": "A reviewer may want to stage a working set before applying a bulk action, and that should not overload the existing done checkbox.",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    }
+  ],
+  "blockers": [
+    "Merging with filter tabs changes the same toolbar area and row-leading controls in App.jsx."
+  ],
+  "openQuestions": [
+    "Should bulk actions also support archive or delete?",
+    "Should selected rows stay selected when filters hide them?"
+  ],
+  "testsRun": [
+    "manual browser check"
+  ],
+  "toolsUsed": [
+    {
+      "name": "edit",
+      "count": 2
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "fixtures/react-todo-conflict/src/App.jsx",
+      "count": 5
+    }
+  ],
+  "resumePrompt": "Continue the bulk triage work. Preserve multi-select behavior and the bulk action toolbar when resolving conflicts on todo/review-toolbar or todo/conflict-resolution."
+}

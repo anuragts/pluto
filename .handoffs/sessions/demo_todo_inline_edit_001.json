@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "demo_todo_inline_edit_001",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": "todo/session-inline-edit",
+  "title": "Add inline todo editing",
+  "createdAt": "2026-04-19T09:05:00.000Z",
+  "updatedAt": "2026-04-19T09:05:00.000Z",
+  "source": "opencode-local",
+  "status": "finalized",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "Added inline editing on branch todo/session-inline-edit, later integrated into todo/working-set-editor where state declarations and header copy overlap with search and persistence work.",
+  "goal": "Make the todo list editable in place so users can quickly fix or refine task titles.",
+  "changesMade": [
+    "Added an editing state keyed by todo id",
+    "Replaced the static title label with an inline input when editing",
+    "Added save and cancel actions beside each todo row"
+  ],
+  "features": [
+    {
+      "name": "inline todo editing",
+      "why": "Users should be able to fix a task title directly in the list instead of recreating the item.",
+      "status": "done",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Put edit controls inside each todo row",
+      "why": "The edit action should stay attached to the row being changed and not require a separate modal.",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    }
+  ],
+  "blockers": [
+    "Merging with search and persistence changes the same state declarations and top panel layout in App.jsx."
+  ],
+  "openQuestions": [
+    "Should save trigger on blur or only on explicit button click?",
+    "How should inline editing behave when search narrows the visible working set?"
+  ],
+  "testsRun": [
+    "manual browser check"
+  ],
+  "toolsUsed": [
+    {
+      "name": "edit",
+      "count": 2
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "fixtures/react-todo-conflict/src/App.jsx",
+      "count": 5
+    }
+  ],
+  "resumePrompt": "Continue the inline editing work. Preserve per-row edit controls and in-place title editing when resolving conflicts on todo/working-set-editor or todo/conflict-resolution."
+}
