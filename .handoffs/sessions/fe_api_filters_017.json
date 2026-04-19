@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_api_filters_017",
+  "branch": "fe/dashboard-api-filters",
+  "title": "Add richer API-side filters for session inspection",
+  "createdAt": "2026-04-19T15:02:00.000Z",
+  "updatedAt": "2026-04-19T15:28:00.000Z",
+  "status": "draft",
+  "parentSessionIds": [
+    "fe_data_contracts_006",
+    "fe_command_palette_005"
+  ],
+  "shareUrl": null,
+  "summary": "Started shaping richer server-side filters so the frontend can query session status, branch families, and text search without downloading everything first.",
+  "goal": "Prepare the dashboard and future command palette for larger handoff corpora by moving more filtering work into the route layer.",
+  "changesMade": [
+    "Mapped filter inputs needed by sessions_context and the dashboard shell",
+    "Outlined branch, status, and text filter behavior",
+    "Reviewed where data.ts can own filtering without multiplying route logic",
+    "Identified places where the frontend still assumes a full corpus load"
+  ],
+  "features": [
+    {
+      "name": "route-side session filtering",
+      "why": "Larger frontend corpora will eventually need narrower payloads for speed and clarity.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/app/api/data/route.ts",
+        "dashboard/src/lib/data.ts"
+      ]
+    },
+    {
+      "name": "command palette filter feed",
+      "why": "The palette should be able to search the same filtered dataset the shell is showing.",
+      "status": "planned",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    },
+    {
+      "name": "branch family awareness",
+      "why": "Grouping frontend sessions by branch family helps when several related efforts are active at once.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/lib/data.ts"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Keep filtering primitives in lib/data.ts even if the route exposes them",
+      "why": "One shared implementation reduces drift between API and direct file-based reads.",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    },
+    {
+      "decision": "Support status and query first, branch groupings second",
+      "why": "Those two filters unlock the biggest inspection gains with the smallest surface area.",
+      "files": [
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    }
+  ],
+  "blockers": [
+    "The shell still expects the whole session list, so route filtering needs a small frontend contract pass too."
+  ],
+  "openQuestions": [
+    "Should filter state live in the URL before we add server-side filtering?"
+  ],
+  "testsRun": [
+    "design review only"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    },
+    {
+      "name": "sessions_context",
+      "count": 1
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/app/api/data/route.ts",
+      "count": 7
+    },
+    {
+      "path": "dashboard/src/lib/data.ts",
+      "count": 7
+    },
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 2
+    }
+  ],
+  "resumePrompt": "Continue API filtering in dashboard/src/lib/data.ts, then update dashboard/src/app/api/data/route.ts once the filter contract is settled."
+}

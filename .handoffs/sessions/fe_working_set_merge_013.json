@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_working_set_merge_013",
+  "branch": "fe/react-todo-working-set-merge",
+  "title": "Integrate the strongest JSX review features into one working set",
+  "createdAt": "2026-04-19T13:14:00.000Z",
+  "updatedAt": "2026-04-19T13:40:00.000Z",
+  "status": "draft",
+  "parentSessionIds": [
+    "fe_inline_edit_010",
+    "fe_bulk_actions_011",
+    "fe_search_persist_012"
+  ],
+  "shareUrl": null,
+  "summary": "Started integrating tabs, inline edits, search, and bulk actions into one coherent JSX working set, exposing where the frontend state model still fights itself.",
+  "goal": "Use the overlapping React sessions as raw material for one combined review surface and capture the seams that need cleanup.",
+  "changesMade": [
+    "Compared the overlapping JSX state models from the three prior sessions",
+    "Mapped the most dangerous interaction points between search, selection, and edits",
+    "Outlined a combined working set reducer-style approach",
+    "Updated the fixture story toward integration instead of isolated features"
+  ],
+  "features": [
+    {
+      "name": "working set integration",
+      "why": "The handoff corpus should include a believable phase where separate frontend feature branches are brought together.",
+      "status": "partial",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx",
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    },
+    {
+      "name": "state interaction audit",
+      "why": "The integrated JSX flow only works if selection, editing, and search stop trampling each other.",
+      "status": "partial",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    },
+    {
+      "name": "integration narrative",
+      "why": "The session history should explain how isolated frontend sessions become one merged review experience.",
+      "status": "done",
+      "files": [
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Integrate working-set behavior before adding more JSX features",
+      "why": "The fixture is already complex enough that extra features would hide the real coordination problem.",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    },
+    {
+      "decision": "Document state collisions explicitly in the handoff narrative",
+      "why": "This session should teach the repo how a frontend merge effort differs from a simple feature branch.",
+      "files": [
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    }
+  ],
+  "blockers": [
+    "Selection and inline edit state still need a shared source of truth before the combined JSX flow is reliable."
+  ],
+  "openQuestions": [
+    "Do we want reducer-style state, or is the fixture still simple enough for grouped useState hooks?",
+    "Should hidden selected rows stay selected when the search query changes?"
+  ],
+  "testsRun": [
+    "design review only"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    },
+    {
+      "name": "get_context",
+      "count": 4
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "fixtures/react-todo-conflict/src/App.jsx",
+      "count": 18
+    },
+    {
+      "path": "REACT_TODO_CONFLICT_DEMO.md",
+      "count": 5
+    }
+  ],
+  "resumePrompt": "Continue the working-set merge by untangling shared state inside fixtures/react-todo-conflict/src/App.jsx before adding any new JSX affordances."
+}

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_triage_tabs_009",
+  "branch": "fe/react-todo-triage-tabs",
+  "title": "Add JSX triage tabs to the React todo fixture",
+  "createdAt": "2026-04-19T11:28:00.000Z",
+  "updatedAt": "2026-04-19T11:50:00.000Z",
+  "status": "finalized",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "Introduced triage tabs in the React todo JSX fixture to split review work into inbox, active, and done states without leaving one screen.",
+  "goal": "Seed the frontend handoff corpus with realistic JSX feature work that shares files and rationale across multiple sessions.",
+  "changesMade": [
+    "Added stateful tabs for inbox, active, and done groupings",
+    "Restructured App.jsx rendering to support filtered task lists",
+    "Kept interactions lightweight so later sessions can layer more controls",
+    "Documented the tab behavior in the demo narrative"
+  ],
+  "features": [
+    {
+      "name": "triage tabs in JSX",
+      "why": "This fixture needs believable frontend sessions that touch the same React surface for later handoff and conflict inspection.",
+      "status": "done",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx",
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    },
+    {
+      "name": "list filtering state",
+      "why": "Later sessions will build on the same JSX state model for search, edit, and bulk actions.",
+      "status": "done",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    },
+    {
+      "name": "fixture story alignment",
+      "why": "The demo markdown should explain how the frontend sessions relate when inspected from the handoff repo.",
+      "status": "done",
+      "files": [
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Use the todo fixture as the JSX side of the demo corpus",
+      "why": "The repo already contains a React JSX app that is small enough to reason about and rich enough to create overlapping sessions.",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx",
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    },
+    {
+      "decision": "Keep tabs simple so later sessions can layer actions without rewriting the foundation",
+      "why": "The point is to create believable session history, not one overdesigned fixture step.",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    }
+  ],
+  "blockers": [],
+  "openQuestions": [
+    "Should the tab state live in the URL once the fixture starts simulating deeper review flows?"
+  ],
+  "testsRun": [
+    "npm run test -- react todo fixture mental model",
+    "manual JSX flow review"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "fixtures/react-todo-conflict/src/App.jsx",
+      "count": 12
+    },
+    {
+      "path": "REACT_TODO_CONFLICT_DEMO.md",
+      "count": 4
+    }
+  ],
+  "resumePrompt": "Continue the JSX triage flow in fixtures/react-todo-conflict/src/App.jsx and then sync the updated behavior back into REACT_TODO_CONFLICT_DEMO.md."
+}

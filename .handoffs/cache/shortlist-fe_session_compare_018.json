@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "fe_session_compare_018",
+  "createdAt": "2026-04-19T15:54:00.000Z",
+  "candidates": [
+    {
+      "sessionId": "fe_conflict_drawer_004",
+      "title": "Turn conflict rows into a frontend conflict drawer",
+      "score": 13,
+      "reasonSelected": [
+        "query summary match",
+        "file overlap"
+      ]
+    },
+    {
+      "sessionId": "fe_session_details_003",
+      "title": "Expand session detail cards into full inspection panes",
+      "score": 12,
+      "reasonSelected": [
+        "query title match",
+        "directory overlap"
+      ]
+    },
+    {
+      "sessionId": "fe_handoff_timeline_020",
+      "title": "Design a frontend handoff timeline from the seeded session corpus",
+      "score": 9,
+      "reasonSelected": [
+        "query rationale match"
+      ]
+    }
+  ]
+}

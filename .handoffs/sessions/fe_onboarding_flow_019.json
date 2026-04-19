@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_onboarding_flow_019",
+  "branch": "fe/dashboard-onboarding-flow",
+  "title": "Sketch a non-engineer onboarding flow for new session roles",
+  "createdAt": "2026-04-19T15:56:00.000Z",
+  "updatedAt": "2026-04-19T16:22:00.000Z",
+  "status": "draft",
+  "parentSessionIds": [
+    "fe_peer_console_008",
+    "fe_workspace_shell_001"
+  ],
+  "shareUrl": null,
+  "summary": "Sketched how a non-engineer could onboard a new session role from the frontend, moving the dashboard toward a manager surface instead of a read-only viewer.",
+  "goal": "Define the first onboarding workflow that uses the React frontend to set role, expectations, and guardrails for future session work.",
+  "changesMade": [
+    "Outlined the onboarding steps a new operator would need",
+    "Mapped where peer role hints and task framing would appear in the shell",
+    "Identified missing data fields for job, tools, and constraints",
+    "Connected the flow to the peer console and shell structure"
+  ],
+  "features": [
+    {
+      "name": "role onboarding concept",
+      "why": "A management UI only becomes real once someone outside engineering can create and shape work.",
+      "status": "planned",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/app/page.tsx"
+      ]
+    },
+    {
+      "name": "guided setup steps",
+      "why": "The onboarding flow needs a simple sequence rather than exposing raw system primitives up front.",
+      "status": "planned",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/app/globals.css"
+      ]
+    },
+    {
+      "name": "role metadata contract",
+      "why": "Frontend onboarding only works if the backend and session store understand role definitions.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/lib/data.ts"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Make onboarding a workflow layer over the existing shell",
+      "why": "The shell already has the right context; onboarding should guide use of it instead of spawning another experience.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    },
+    {
+      "decision": "Define role cards in human language, not transport capability jargon",
+      "why": "The first target user for onboarding is not a systems engineer.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/app/page.tsx"
+      ]
+    }
+  ],
+  "blockers": [
+    "The repo does not yet persist role definitions, so the onboarding flow is a shell-only concept for now."
+  ],
+  "openQuestions": [
+    "What is the minimum role schema that lets a non-engineer safely define a new session lane?"
+  ],
+  "testsRun": [
+    "concept review only"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 5
+    },
+    {
+      "path": "dashboard/src/app/page.tsx",
+      "count": 3
+    },
+    {
+      "path": "dashboard/src/app/globals.css",
+      "count": 2
+    },
+    {
+      "path": "dashboard/src/lib/data.ts",
+      "count": 2
+    }
+  ],
+  "resumePrompt": "Continue the onboarding concept by defining the minimum role metadata in dashboard/src/lib/data.ts before expanding the flow in dashboard/src/components/dashboard.tsx."
+}

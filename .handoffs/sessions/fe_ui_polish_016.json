@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_ui_polish_016",
+  "branch": "fe/dashboard-ui-polish",
+  "title": "Polish the dashboard TSX styling for dense session corpora",
+  "createdAt": "2026-04-19T14:36:00.000Z",
+  "updatedAt": "2026-04-19T15:00:00.000Z",
+  "status": "draft",
+  "parentSessionIds": [
+    "fe_workspace_shell_001",
+    "fe_session_details_003",
+    "fe_file_map_007"
+  ],
+  "shareUrl": null,
+  "summary": "Started tightening spacing, type rhythm, and density controls so the dashboard remains readable with a large session dataset instead of the small original demo.",
+  "goal": "Adapt the React dashboard to the new twenty-session corpus without turning the UI into a wall of repeated card chrome.",
+  "changesMade": [
+    "Reviewed long-session rendering under denser data",
+    "Outlined spacing and hierarchy adjustments for the shell and cards",
+    "Identified where repeated borders and padding feel too heavy",
+    "Mapped the CSS areas that need a more operational frontend tone"
+  ],
+  "features": [
+    {
+      "name": "dense corpus polish",
+      "why": "A frontend inspection tool should remain readable when the dataset grows well past the original handful of sessions.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/app/globals.css"
+      ]
+    },
+    {
+      "name": "long-content containment",
+      "why": "Big session summaries, decisions, and file lists need stronger layout discipline in TSX.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    },
+    {
+      "name": "operational visual tone",
+      "why": "The dashboard should read like a control plane, not a generic component showcase.",
+      "status": "planned",
+      "files": [
+        "dashboard/src/app/globals.css"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Polish density after the larger dataset exists",
+      "why": "The real pressure points only show up once the frontend is exercised with many sessions.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/app/globals.css"
+      ]
+    },
+    {
+      "decision": "Keep layout changes close to the existing shell",
+      "why": "This pass should refine the tool, not replace the structure that earlier sessions established.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    }
+  ],
+  "blockers": [
+    "Need screenshots or live review to validate density decisions instead of tuning purely from code."
+  ],
+  "openQuestions": [
+    "Should sessions default to collapsed or expanded when the corpus is this large?"
+  ],
+  "testsRun": [
+    "design review only"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 8
+    },
+    {
+      "path": "dashboard/src/app/globals.css",
+      "count": 6
+    }
+  ],
+  "resumePrompt": "Continue the density polish in dashboard/src/app/globals.css, then tune any overlong session sections in dashboard/src/components/dashboard.tsx."
+}

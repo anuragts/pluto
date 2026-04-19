@@ -16,6 +16,7 @@
   },
   "include": [
     ".opencode/**/*.ts",
+    "scripts/**/*.ts",
     "src/**/*.ts",
     "tests/**/*.ts"
   ]

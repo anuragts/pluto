@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_activity_rail_002",
+  "branch": "fe/dashboard-activity-rail",
+  "title": "Add a frontend activity rail for live session movement",
+  "createdAt": "2026-04-19T08:22:00.000Z",
+  "updatedAt": "2026-04-19T08:40:00.000Z",
+  "status": "finalized",
+  "parentSessionIds": [
+    "fe_workspace_shell_001"
+  ],
+  "shareUrl": null,
+  "summary": "Layered a session activity rail into the dashboard shell so recent updates, idle peers, and queue shifts read like a live frontend tool instead of a static report.",
+  "goal": "Use the existing dashboard shell as the frame for a React activity rail that makes session recency and operator focus visible at a glance.",
+  "changesMade": [
+    "Introduced a recent activity column inside the dashboard shell",
+    "Promoted updated timestamps and status badges as first-class UI cues",
+    "Extended data.ts helpers to sort and shape recent frontend activity",
+    "Adjusted badge usage so online/offline and draft/finalized states read consistently"
+  ],
+  "features": [
+    {
+      "name": "session activity rail",
+      "why": "Show operators which frontend sessions changed most recently before they expand the full context.",
+      "status": "done",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/lib/data.ts"
+      ]
+    },
+    {
+      "name": "status badge normalization",
+      "why": "Prevent the UI from using different visual language for peers and sessions that represent the same operational state.",
+      "status": "done",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/components/ui/badge.tsx"
+      ]
+    },
+    {
+      "name": "recency-aware sorting",
+      "why": "Frontends with many sessions need a default view that surfaces the hot path first.",
+      "status": "done",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Surface activity inside the main shell instead of a separate page",
+      "why": "Context switching between pages would slow triage when the operator only wants to inspect what moved recently.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    },
+    {
+      "decision": "Derive activity from session metadata instead of introducing a second event log",
+      "why": "The repo already has enough signal in updatedAt, status, and touched files to bootstrap the rail without a new backend.",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    }
+  ],
+  "blockers": [],
+  "openQuestions": [
+    "Should the activity rail cluster changes by branch family once we have more than fifty sessions?"
+  ],
+  "testsRun": [
+    "npm run build",
+    "manual session sorting smoke test"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    },
+    {
+      "name": "get_context",
+      "count": 2
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 10
+    },
+    {
+      "path": "dashboard/src/lib/data.ts",
+      "count": 7
+    },
+    {
+      "path": "dashboard/src/app/api/data/route.ts",
+      "count": 3
+    },
+    {
+      "path": "dashboard/src/components/ui/badge.tsx",
+      "count": 2
+    }
+  ],
+  "resumePrompt": "Continue the activity rail by refining the data shaping in dashboard/src/lib/data.ts and then verify the rail layout in dashboard/src/components/dashboard.tsx."
+}

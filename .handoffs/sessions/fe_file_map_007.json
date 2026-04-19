@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_file_map_007",
+  "branch": "fe/dashboard-file-map",
+  "title": "Refine the frontend file map for session hotspots",
+  "createdAt": "2026-04-19T10:32:00.000Z",
+  "updatedAt": "2026-04-19T10:57:00.000Z",
+  "status": "finalized",
+  "parentSessionIds": [
+    "fe_data_contracts_006"
+  ],
+  "shareUrl": null,
+  "summary": "Sharpened the file map into a hotspot view that highlights repeated TSX and JSX touch points across sessions and makes repeated frontend pressure visible.",
+  "goal": "Use file-level aggregation to show where the frontend work is clustering so teams can spot fragile areas before collisions happen.",
+  "changesMade": [
+    "Reworked file map ordering around session count and touch density",
+    "Tagged repeated hotspots with stronger visual emphasis",
+    "Kept per-session contribution badges compact enough for dense maps",
+    "Made file path presentation friendlier for mixed JSX and TSX areas"
+  ],
+  "features": [
+    {
+      "name": "hotspot-first file map",
+      "why": "Operators need to spot overloaded frontend files quickly when many sessions converge on the same components.",
+      "status": "done",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    },
+    {
+      "name": "mixed JSX and TSX file labeling",
+      "why": "The demo corpus includes both React todo JSX and Next dashboard TSX work.",
+      "status": "done",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/lib/utils.ts"
+      ]
+    },
+    {
+      "name": "aggregation cleanup",
+      "why": "The file map should stay legible even when twenty or more sessions exist in the repo.",
+      "status": "done",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Sort hotspots by breadth before raw touch count",
+      "why": "A file touched by many sessions is often riskier than a file hammered by one session.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/lib/data.ts"
+      ]
+    },
+    {
+      "decision": "Keep the file map inside the main dashboard tabs",
+      "why": "Hotspot review is part of regular session triage, not a separate admin mode.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/components/ui/tabs.tsx"
+      ]
+    }
+  ],
+  "blockers": [],
+  "openQuestions": [
+    "Should the file map collapse same-directory hotspots into groups once the list gets long?"
+  ],
+  "testsRun": [
+    "npm run build",
+    "manual hotspot ordering review"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    },
+    {
+      "name": "get_context",
+      "count": 1
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 9
+    },
+    {
+      "path": "dashboard/src/lib/data.ts",
+      "count": 5
+    },
+    {
+      "path": "dashboard/src/lib/utils.ts",
+      "count": 2
+    },
+    {
+      "path": "dashboard/src/components/ui/tabs.tsx",
+      "count": 1
+    }
+  ],
+  "resumePrompt": "Continue the hotspot map by stress-testing dashboard/src/components/dashboard.tsx against wider session data and then trim any noisy labeling in dashboard/src/lib/data.ts."
+}

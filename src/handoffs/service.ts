@@ -6,6 +6,8 @@ import { runBackfill, type CommandRunner } from "./backfill.js";
 import {
   createHandoffPaths,
   ensureHandoffLayout,
+  getPatchPath,
+  getSessionRecordPath,
   loadAllSessionRecords,
   loadIndex,
   loadSessionRecord,
@@ -24,6 +26,8 @@ import type {
   CurrentContext,
   GetContextArgs,
   GetContextResult,
+  SessionsContextArgs,
+  SessionsContextResult,
   SessionFeature,
   SessionInfoLike,
   SessionRecord,
@@ -296,6 +300,37 @@ function isAssistantSummaryMessage(info: Message): boolean {
   return Boolean((info as Message & { summary?: boolean }).summary);
 }
 
+function matchesSessionQuery(record: SessionRecord, query: string | undefined): boolean {
+  const normalizedQuery = cleanText(query);
+  if (!normalizedQuery) {
+    return true;
+  }
+
+  const haystack = cleanText(
+    [
+      record.sessionId,
+      record.title,
+      record.summary,
+      record.goal ?? "",
+      ...(record.changesMade ?? []),
+      ...record.features.flatMap((feature) => [feature.name, feature.why, ...feature.files]),
+      ...record.decisions.flatMap((decision) => [decision.decision, decision.why, ...decision.files]),
+      ...record.blockers,
+      ...record.openQuestions,
+      ...record.testsRun,
+      ...record.filesTouched.map((file) => file.path),
+      record.resumePrompt,
+      record.branch ?? "",
+    ].join(" ")
+  ).toLowerCase();
+
+  return normalizedQuery
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean)
+    .every((token) => haystack.includes(token));
+}
+
 export interface HandoffServiceOptions {
   projectRoot: string;
   logger?: Logger;
@@ -448,6 +483,38 @@ export class HandoffService {
   async backfill(count: number): Promise<BackfillResult> {
     await this.init();
     return this.runBackfillOnce(count, "manual");
+  }
+
+  async getSessionsContext(args: SessionsContextArgs = {}): Promise<SessionsContextResult> {
+    await this.init();
+    const status = args.status ?? "all";
+    const normalizedLimit =
+      typeof args.limit === "number" && Number.isFinite(args.limit) && args.limit > 0
+        ? Math.floor(args.limit)
+        : null;
+    const records = await loadAllSessionRecords(this.paths);
+    const filtered = records
+      .filter((record) => status === "all" || record.status === status)
+      .filter((record) => matchesSessionQuery(record, args.query));
+    const selected = normalizedLimit ? filtered.slice(0, normalizedLimit) : filtered;
+
+    return {
+      totalSessions: records.length,
+      returnedSessions: selected.length,
+      filters: {
+        status,
+        query: cleanText(args.query) || null,
+        limit: normalizedLimit,
+      },
+      sessionsDir: this.paths.sessionsDir,
+      patchesDir: this.paths.patchesDir,
+      sessions: selected.map((record) => ({
+        sessionId: record.sessionId,
+        sessionPath: getSessionRecordPath(this.paths, record.sessionId),
+        patchPath: getPatchPath(this.paths, record.sessionId),
+        record,
+      })),
+    };
   }
 
   async dispose(): Promise<void> {

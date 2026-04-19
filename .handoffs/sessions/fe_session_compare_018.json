@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_session_compare_018",
+  "branch": "fe/dashboard-session-compare",
+  "title": "Prototype session-to-session compare views in TSX",
+  "createdAt": "2026-04-19T15:30:00.000Z",
+  "updatedAt": "2026-04-19T15:54:00.000Z",
+  "status": "draft",
+  "parentSessionIds": [
+    "fe_conflict_drawer_004",
+    "fe_session_details_003",
+    "fe_file_map_007"
+  ],
+  "shareUrl": null,
+  "summary": "Began a compare-view concept so operators can inspect two frontend sessions side by side and understand overlap without manually hopping between expanded cards.",
+  "goal": "Move the dashboard closer to L4 observability by making side-by-side session comparison a real TSX workflow.",
+  "changesMade": [
+    "Mapped the compare use cases coming from hotspot and conflict review",
+    "Outlined a split-pane TSX layout for paired session context",
+    "Identified the data slices needed for files, rationale, and test histories",
+    "Reviewed how compare actions could originate from conflicts and session cards"
+  ],
+  "features": [
+    {
+      "name": "paired session compare view",
+      "why": "Operators need a direct way to inspect overlap and divergence between two frontend sessions.",
+      "status": "planned",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    },
+    {
+      "name": "compare data shaping",
+      "why": "A compare view depends on consistent session payloads and highlighted deltas.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    },
+    {
+      "name": "conflict-origin compare entry points",
+      "why": "Conflict review is the most obvious place to launch side-by-side inspection.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Start with same-repo session compare instead of cross-repo compare",
+      "why": "The existing handoff data model is repo-local, so this keeps scope aligned with what the system already knows.",
+      "files": [
+        "dashboard/src/lib/data.ts"
+      ]
+    },
+    {
+      "decision": "Compare rationale and files before raw patch text",
+      "why": "Intent and touched surfaces are faster to scan than long markdown patches.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    }
+  ],
+  "blockers": [
+    "Need a compare state model and likely URL params before the split-pane view can be navigated reliably."
+  ],
+  "openQuestions": [
+    "Should compare mode live inside the current shell or open a dedicated route?"
+  ],
+  "testsRun": [
+    "design review only"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    },
+    {
+      "name": "get_context",
+      "count": 2
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 5
+    },
+    {
+      "path": "dashboard/src/lib/data.ts",
+      "count": 4
+    },
+    {
+      "path": "dashboard/src/app/api/data/route.ts",
+      "count": 3
+    }
+  ],
+  "resumePrompt": "Continue the compare prototype by settling the paired-session data shape in dashboard/src/lib/data.ts before touching the TSX layout."
+}

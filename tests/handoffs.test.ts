@@ -332,6 +332,78 @@ describe("handoff core", () => {
     expect(result.questionSummary).toContain("notes/profile.md");
   });
 
+  it("lists stored session context with artifact paths", async () => {
+    const projectRoot = await createTempProject();
+    const service = await createService(projectRoot);
+    await createSession(service, projectRoot, "session-a", "Review auth history");
+    await service.handleEvent({
+      type: "session.updated",
+      properties: {
+        info: {
+          id: "session-a",
+          title: "Review auth history",
+          directory: projectRoot,
+          projectID: "project-1",
+          version: "1",
+          time: {
+            created: Date.parse("2026-04-19T10:00:00.000Z"),
+            updated: Date.parse("2026-04-19T10:05:00.000Z"),
+          },
+        },
+      },
+    } as never);
+
+    const result = await service.getSessionsContext();
+
+    expect(result.totalSessions).toBe(1);
+    expect(result.returnedSessions).toBe(1);
+    expect(result.sessions[0]?.sessionId).toBe("session-a");
+    expect(result.sessions[0]?.sessionPath).toContain(".handoffs/sessions/session-a.json");
+    expect(result.sessions[0]?.patchPath).toContain(".handoffs/patches/session-a.md");
+    expect(result.sessions[0]?.record.title).toBe("Review auth history");
+  });
+
+  it("filters session context by status, query, and limit", async () => {
+    const projectRoot = await createTempProject();
+    const paths = createHandoffPaths(projectRoot);
+    await ensureHandoffLayout(paths);
+
+    await saveSessionRecord(
+      paths,
+      record({
+        sessionId: "draft-auth",
+        projectRoot,
+        status: "draft",
+        title: "Draft auth task",
+        summary: "investigate auth retries",
+      })
+    );
+    await saveSessionRecord(
+      paths,
+      record({
+        sessionId: "finalized-auth",
+        projectRoot,
+        status: "finalized",
+        title: "Finalize auth task",
+        summary: "ship auth retries",
+      })
+    );
+
+    const service = await createService(projectRoot);
+    const result = await service.getSessionsContext({
+      status: "finalized",
+      query: "ship auth",
+      limit: 1,
+    });
+
+    expect(result.totalSessions).toBe(2);
+    expect(result.returnedSessions).toBe(1);
+    expect(result.filters.status).toBe("finalized");
+    expect(result.filters.query).toBe("ship auth");
+    expect(result.filters.limit).toBe(1);
+    expect(result.sessions.map((session) => session.sessionId)).toEqual(["finalized-auth"]);
+  });
+
   it("detects conflict entries for different rationale on the same file", () => {
     const projectRoot = "/tmp/project";
     const conflicts = detectConflicts([

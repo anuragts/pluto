@@ -4,8 +4,10 @@ Repo-local OpenCode handoff plugin with:
 
 - `.handoffs/` session artifacts
 - `get_context` custom tool
+- `sessions_context` custom tool
 - `/get-context` slash command
 - `/handoff-backfill` slash command
+- `/sessions-context` slash command
 
 ## Startup behavior
 
@@ -30,8 +32,10 @@ OPENCODE_HANDOFFS_AUTO_BACKFILL=1 opencode .
 - [.opencode/plugins/handoffs.ts](./.opencode/plugins/handoffs.ts)
 - [.opencode/tools/get_context.ts](./.opencode/tools/get_context.ts)
 - [.opencode/tools/handoff_backfill.ts](./.opencode/tools/handoff_backfill.ts)
+- [.opencode/tools/sessions_context.ts](./.opencode/tools/sessions_context.ts)
 - [.opencode/commands/get-context.md](./.opencode/commands/get-context.md)
 - [.opencode/commands/handoff-backfill.md](./.opencode/commands/handoff-backfill.md)
+- [.opencode/commands/sessions-context.md](./.opencode/commands/sessions-context.md)
 - [src/handoffs](./src/handoffs)
 
 ## Development

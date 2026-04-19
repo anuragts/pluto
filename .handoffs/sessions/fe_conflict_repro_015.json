@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_conflict_repro_015",
+  "branch": "fe/react-todo-conflict-repro",
+  "title": "Capture a realistic JSX overlap repro for handoff inspection",
+  "createdAt": "2026-04-19T14:08:00.000Z",
+  "updatedAt": "2026-04-19T14:34:00.000Z",
+  "status": "finalized",
+  "parentSessionIds": [
+    "fe_inline_edit_010",
+    "fe_bulk_actions_011",
+    "fe_search_persist_012",
+    "fe_review_toolbar_014"
+  ],
+  "shareUrl": null,
+  "summary": "Recorded a deliberate JSX overlap repro so the handoff repo has a realistic frontend case where several sessions touch App.jsx for different reasons.",
+  "goal": "Make the .handoffs corpus demonstrate more than one-off features by showing how a frontend file becomes a hotspot with multiple overlapping narratives.",
+  "changesMade": [
+    "Captured the dominant overlapping JSX sessions as one reproducible story",
+    "Made the fixture demo explain the branch relationships more directly",
+    "Emphasized how rationale differs across the sessions even when the file is the same",
+    "Positioned the overlap as an inspection and resume scenario, not only a merge problem"
+  ],
+  "features": [
+    {
+      "name": "realistic overlap repro",
+      "why": "The handoff repo should teach session inspection, history reconstruction, and frontend hotspot review from one concrete example.",
+      "status": "done",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx",
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    },
+    {
+      "name": "branch relationship narrative",
+      "why": "Operators need to see how distinct frontend goals converged on the same JSX surface.",
+      "status": "done",
+      "files": [
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    },
+    {
+      "name": "inspection-first framing",
+      "why": "The session should support debug and audit workflows, not just conflict resolution.",
+      "status": "done",
+      "files": [
+        "README.md",
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Frame the overlap as a handoff dataset asset, not just fixture drama",
+      "why": "The demo should prove why repo-local memory matters for React frontends with parallel work.",
+      "files": [
+        "REACT_TODO_CONFLICT_DEMO.md",
+        "README.md"
+      ]
+    },
+    {
+      "decision": "Keep App.jsx as the hotspot file",
+      "why": "Using one shared JSX surface makes the inspection story crisp and the overlap obvious.",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    }
+  ],
+  "blockers": [],
+  "openQuestions": [
+    "Should the demo narrative include example /sessions-context usage now that the corpus is much larger?"
+  ],
+  "testsRun": [
+    "manual narrative review"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    },
+    {
+      "name": "sessions_context",
+      "count": 2
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "fixtures/react-todo-conflict/src/App.jsx",
+      "count": 8
+    },
+    {
+      "path": "REACT_TODO_CONFLICT_DEMO.md",
+      "count": 9
+    },
+    {
+      "path": "README.md",
+      "count": 2
+    }
+  ],
+  "resumePrompt": "Continue the overlap repro by checking REACT_TODO_CONFLICT_DEMO.md first, then inspect the shared JSX hotspot in fixtures/react-todo-conflict/src/App.jsx."
+}

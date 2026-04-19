@@ -145,6 +145,32 @@ export interface BackfillResult {
   warnings: string[];
 }
 
+export interface SessionsContextArgs {
+  status?: HandoffStatus | "all";
+  query?: string;
+  limit?: number;
+}
+
+export interface SessionContextEntry {
+  sessionId: string;
+  sessionPath: string;
+  patchPath: string;
+  record: SessionRecord;
+}
+
+export interface SessionsContextResult {
+  totalSessions: number;
+  returnedSessions: number;
+  filters: {
+    status: HandoffStatus | "all";
+    query: string | null;
+    limit: number | null;
+  };
+  sessionsDir: string;
+  patchesDir: string;
+  sessions: SessionContextEntry[];
+}
+
 export interface SessionInfoLike {
   id: string;
   directory?: string;

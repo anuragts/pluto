@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_conflict_drawer_004",
+  "branch": "fe/dashboard-conflict-drawer",
+  "title": "Turn conflict rows into a frontend conflict drawer",
+  "createdAt": "2026-04-19T09:10:00.000Z",
+  "updatedAt": "2026-04-19T09:35:00.000Z",
+  "status": "finalized",
+  "parentSessionIds": [
+    "fe_workspace_shell_001",
+    "fe_session_details_003"
+  ],
+  "shareUrl": null,
+  "summary": "Reworked conflict visibility into a drawer-style inspection flow so overlapping TSX and JSX work can be reviewed with rationale, branches, and suggested tests in one place.",
+  "goal": "Move conflict handling from a passive list to a dedicated frontend surface that explains why sessions overlap and what the operator should inspect next.",
+  "changesMade": [
+    "Deepened the conflict panel to show session titles and branch context together",
+    "Aligned conflict UI with the inspection card language from the session pane",
+    "Shaped conflict data so file overlaps and rationale labels stay grouped",
+    "Prepared the shell for future action buttons like compare and assign review"
+  ],
+  "features": [
+    {
+      "name": "conflict drawer presentation",
+      "why": "A high-signal review surface helps frontend teams inspect overlapping work before it turns into broken UX.",
+      "status": "done",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    },
+    {
+      "name": "rationale-first conflict summaries",
+      "why": "The operator needs to know why two sessions touched the same file, not just that they did.",
+      "status": "done",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/lib/data.ts"
+      ]
+    },
+    {
+      "name": "shared conflict contract",
+      "why": "Keep API and UI aligned as conflict payloads become richer.",
+      "status": "done",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Treat conflicts as an inspection workflow instead of a warning badge",
+      "why": "Frontend overlap often needs a human-quality judgment rather than a single binary signal.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    },
+    {
+      "decision": "Keep the first version read-only",
+      "why": "The team needs reliable visibility before wiring any mutation or assignment actions into the UI.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    }
+  ],
+  "blockers": [],
+  "openQuestions": [
+    "Should the first action from a conflict drawer be compare context, open file, or assign reviewer?"
+  ],
+  "testsRun": [
+    "npm run build",
+    "manual conflict list regression pass"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    },
+    {
+      "name": "get_context",
+      "count": 3
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 11
+    },
+    {
+      "path": "dashboard/src/lib/data.ts",
+      "count": 6
+    },
+    {
+      "path": "dashboard/src/app/api/data/route.ts",
+      "count": 3
+    }
+  ],
+  "resumePrompt": "Continue the conflict drawer by reviewing dashboard/src/components/dashboard.tsx and then enrich dashboard/src/lib/data.ts with any missing rationale fields."
+}

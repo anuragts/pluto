@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_review_toolbar_014",
+  "branch": "fe/react-todo-review-toolbar",
+  "title": "Build a JSX review toolbar on top of the integrated working set",
+  "createdAt": "2026-04-19T13:42:00.000Z",
+  "updatedAt": "2026-04-19T14:06:00.000Z",
+  "status": "finalized",
+  "parentSessionIds": [
+    "fe_working_set_merge_013"
+  ],
+  "shareUrl": null,
+  "summary": "Introduced a review toolbar that turns the integrated JSX working set into a real triage surface, with session-driven actions clustered at the top of the board.",
+  "goal": "Use the integrated working set as the base for a denser React review toolbar that mirrors how frontend teams handle queues in practice.",
+  "changesMade": [
+    "Added a top-level review toolbar above the task list",
+    "Grouped shared actions so the board feels more like a review console",
+    "Aligned toolbar behavior with selection and filter state",
+    "Updated the fixture narrative to connect the toolbar with prior JSX sessions"
+  ],
+  "features": [
+    {
+      "name": "review toolbar",
+      "why": "Once the JSX board has multiple actions, those actions need a coherent home that reflects review intent.",
+      "status": "done",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    },
+    {
+      "name": "integrated action grouping",
+      "why": "Bulk, filter, and review flows should feel like one system instead of separate patches to the same file.",
+      "status": "done",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    },
+    {
+      "name": "story continuity update",
+      "why": "The handoff story should now show a path from isolated JSX features to a cohesive review experience.",
+      "status": "done",
+      "files": [
+        "REACT_TODO_CONFLICT_DEMO.md"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Place the review toolbar above the filtered list",
+      "why": "Shared actions should reflect the visible working set, not sit far away from the content they affect.",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    },
+    {
+      "decision": "Keep the toolbar declarative and local to App.jsx",
+      "why": "The fixture stays easier to reason about if the whole JSX interaction remains in one file.",
+      "files": [
+        "fixtures/react-todo-conflict/src/App.jsx"
+      ]
+    }
+  ],
+  "blockers": [],
+  "openQuestions": [
+    "Should the toolbar preview how many hidden selected rows exist when search is active?"
+  ],
+  "testsRun": [
+    "manual integrated review pass"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "fixtures/react-todo-conflict/src/App.jsx",
+      "count": 17
+    },
+    {
+      "path": "REACT_TODO_CONFLICT_DEMO.md",
+      "count": 4
+    }
+  ],
+  "resumePrompt": "Continue the review toolbar in fixtures/react-todo-conflict/src/App.jsx and keep the toolbar synchronized with both filter and selection state."
+}

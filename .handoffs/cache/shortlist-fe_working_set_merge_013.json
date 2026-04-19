@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "fe_working_set_merge_013",
+  "createdAt": "2026-04-19T13:40:00.000Z",
+  "candidates": [
+    {
+      "sessionId": "fe_inline_edit_010",
+      "title": "Layer inline editing on top of the JSX triage flow",
+      "score": 16,
+      "reasonSelected": [
+        "file overlap",
+        "query rationale match"
+      ]
+    },
+    {
+      "sessionId": "fe_bulk_actions_011",
+      "title": "Add bulk review actions to the shared JSX todo surface",
+      "score": 15,
+      "reasonSelected": [
+        "file overlap",
+        "prefetch shortlist"
+      ]
+    },
+    {
+      "sessionId": "fe_search_persist_012",
+      "title": "Add search and local persistence to the JSX triage board",
+      "score": 15,
+      "reasonSelected": [
+        "file overlap",
+        "recent"
+      ]
+    }
+  ]
+}

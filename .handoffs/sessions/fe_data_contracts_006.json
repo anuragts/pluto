@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_data_contracts_006",
+  "branch": "fe/dashboard-data-contracts",
+  "title": "Stabilize TSX data contracts for the dashboard API",
+  "createdAt": "2026-04-19T10:06:00.000Z",
+  "updatedAt": "2026-04-19T10:30:00.000Z",
+  "status": "finalized",
+  "parentSessionIds": [
+    "fe_workspace_shell_001",
+    "fe_activity_rail_002"
+  ],
+  "shareUrl": null,
+  "summary": "Refined the frontend data contract so the API route and TSX shell agree on sessions, conflicts, stats, and peer metadata without repeated reshaping in components.",
+  "goal": "Reduce frontend glue code by giving the route and the React shell a cleaner contract for session-driven dashboards.",
+  "changesMade": [
+    "Normalized session and conflict payload shapes",
+    "Added explicit stats for counts the shell reads repeatedly",
+    "Consolidated file conflict derivation inside the loader layer",
+    "Removed assumptions from the TSX shell about missing branch and status fields"
+  ],
+  "features": [
+    {
+      "name": "dashboard data normalization",
+      "why": "TSX components should spend time rendering, not guessing at missing backend fields.",
+      "status": "done",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    },
+    {
+      "name": "frontend stats payload",
+      "why": "The shell header and future summary widgets need counts without recomputing everything client-side.",
+      "status": "done",
+      "files": [
+        "dashboard/src/app/api/data/route.ts",
+        "dashboard/src/app/page.tsx"
+      ]
+    },
+    {
+      "name": "conflict payload alignment",
+      "why": "The conflict drawer depends on a stable set of session titles and paths.",
+      "status": "done",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Keep file-based reading inside lib/data.ts for now",
+      "why": "The dashboard is still repo-local, and the route should not open files directly in multiple places.",
+      "files": [
+        "dashboard/src/lib/data.ts"
+      ]
+    },
+    {
+      "decision": "Return stats from the route instead of deriving them in the shell",
+      "why": "The same counts are used in multiple places and should stay consistent.",
+      "files": [
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    }
+  ],
+  "blockers": [],
+  "openQuestions": [
+    "Do we want one combined payload for the full shell or smaller route slices once the UI becomes interactive?"
+  ],
+  "testsRun": [
+    "npm run build",
+    "manual /api/data inspection"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/lib/data.ts",
+      "count": 13
+    },
+    {
+      "path": "dashboard/src/app/api/data/route.ts",
+      "count": 8
+    },
+    {
+      "path": "dashboard/src/app/page.tsx",
+      "count": 4
+    },
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 3
+    }
+  ],
+  "resumePrompt": "Continue data contract cleanup in dashboard/src/lib/data.ts, then keep dashboard/src/app/api/data/route.ts as the single place that assembles shell payloads."
+}

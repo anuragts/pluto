@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_command_palette_005",
+  "branch": "fe/dashboard-command-palette",
+  "title": "Design the React command palette for session actions",
+  "createdAt": "2026-04-19T09:38:00.000Z",
+  "updatedAt": "2026-04-19T10:03:00.000Z",
+  "status": "draft",
+  "parentSessionIds": [
+    "fe_workspace_shell_001",
+    "fe_activity_rail_002",
+    "fe_session_details_003",
+    "fe_conflict_drawer_004"
+  ],
+  "shareUrl": null,
+  "summary": "Started a command palette concept that would let operators open sessions, jump to conflicts, and filter frontend work without hunting through tabs.",
+  "goal": "Prototype the next interaction layer on top of the workspace shell so large React session corpora remain operable from the keyboard.",
+  "changesMade": [
+    "Mapped the key session actions that deserve palette commands",
+    "Outlined a shared action model for open, compare, filter, and inspect",
+    "Identified the UI seams in dashboard.tsx where the palette can anchor",
+    "Sketched how sessions_context output can seed searchable command items"
+  ],
+  "features": [
+    {
+      "name": "session action palette",
+      "why": "Keyboardable actions become necessary once the frontend tool has dozens of sessions and several panes.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/lib/data.ts"
+      ]
+    },
+    {
+      "name": "command item dataset shaping",
+      "why": "Palette search needs a compact feed of titles, statuses, branches, and touched files.",
+      "status": "planned",
+      "files": [
+        "dashboard/src/lib/data.ts",
+        "dashboard/src/app/api/data/route.ts"
+      ]
+    },
+    {
+      "name": "shell-level interaction hooks",
+      "why": "The palette should feel native to the workspace shell rather than bolted onto one tab.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/app/globals.css"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Search across session metadata first, raw patch content later",
+      "why": "Palette interactions should stay fast and relevant before widening into full-text search.",
+      "files": [
+        "dashboard/src/lib/data.ts"
+      ]
+    },
+    {
+      "decision": "Let the palette launch existing views instead of creating a new page type",
+      "why": "The shell already has the right panes; the palette should be navigation and command glue.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    }
+  ],
+  "blockers": [
+    "Need a shared action state model before palette execution can open or focus a pane reliably."
+  ],
+  "openQuestions": [
+    "Should palette commands expose raw session JSON and patch paths directly for power users?",
+    "Do we want one global palette or separate palettes scoped to sessions and conflicts?"
+  ],
+  "testsRun": [
+    "design review only"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    },
+    {
+      "name": "sessions_context",
+      "count": 3
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 7
+    },
+    {
+      "path": "dashboard/src/lib/data.ts",
+      "count": 6
+    },
+    {
+      "path": "dashboard/src/app/api/data/route.ts",
+      "count": 2
+    },
+    {
+      "path": "dashboard/src/app/globals.css",
+      "count": 2
+    }
+  ],
+  "resumePrompt": "Continue the command palette by stabilizing the action model in dashboard/src/lib/data.ts and then threading palette entry points through dashboard/src/components/dashboard.tsx."
+}

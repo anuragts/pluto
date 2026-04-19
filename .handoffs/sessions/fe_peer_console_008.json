@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "source": "opencode-local",
+  "sessionId": "fe_peer_console_008",
+  "branch": "fe/dashboard-peer-console",
+  "title": "Turn peer cards into a frontend peer console",
+  "createdAt": "2026-04-19T11:00:00.000Z",
+  "updatedAt": "2026-04-19T11:25:00.000Z",
+  "status": "draft",
+  "parentSessionIds": [
+    "fe_workspace_shell_001",
+    "fe_activity_rail_002"
+  ],
+  "shareUrl": null,
+  "summary": "Started reshaping the peer list into a console that explains role hints, capabilities, and recent presence in a way a frontend operator can actually use.",
+  "goal": "Lift the peer panel above a static card grid so it becomes the starting point for assignment and collaboration flows.",
+  "changesMade": [
+    "Outlined richer peer summaries and capability clusters",
+    "Mapped where peer actions could sit without crowding the session list",
+    "Reviewed the hardcoded peer snapshot and the future MCP path",
+    "Identified missing fields needed for real assignment workflows"
+  ],
+  "features": [
+    {
+      "name": "peer console framing",
+      "why": "Operators need to understand who is available and what they can do before handing off frontend work.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/app/page.tsx"
+      ]
+    },
+    {
+      "name": "capability grouping",
+      "why": "Raw capability strings are too low-level for a manager-style frontend surface.",
+      "status": "planned",
+      "files": [
+        "dashboard/src/components/dashboard.tsx",
+        "dashboard/src/lib/data.ts"
+      ]
+    },
+    {
+      "name": "presence-aware summaries",
+      "why": "Assignment decisions depend on whether a peer is active, stale, or offline.",
+      "status": "partial",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "Keep peer actions aspirational until live peer data exists",
+      "why": "The UI should not imply controllability before the backend can fulfill it.",
+      "files": [
+        "dashboard/src/app/page.tsx",
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    },
+    {
+      "decision": "Use role hints as the primary mental model, capabilities as supporting detail",
+      "why": "Non-engineer operators think in responsibilities more than low-level transport features.",
+      "files": [
+        "dashboard/src/components/dashboard.tsx"
+      ]
+    }
+  ],
+  "blockers": [
+    "Peer data is still a snapshot, so assignment actions would be misleading right now."
+  ],
+  "openQuestions": [
+    "Should the eventual peer console sort by availability, skill fit, or recent collaboration history?"
+  ],
+  "testsRun": [
+    "design review only"
+  ],
+  "toolsUsed": [
+    {
+      "name": "read_file",
+      "count": 6
+    },
+    {
+      "name": "apply_patch",
+      "count": 3
+    },
+    {
+      "name": "exec_command",
+      "count": 4
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": "dashboard/src/components/dashboard.tsx",
+      "count": 6
+    },
+    {
+      "path": "dashboard/src/app/page.tsx",
+      "count": 4
+    },
+    {
+      "path": "dashboard/src/lib/data.ts",
+      "count": 2
+    }
+  ],
+  "resumePrompt": "Continue the peer console by deciding how dashboard/src/app/page.tsx should evolve once live peer data replaces the snapshot."
+}

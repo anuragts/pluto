@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "fe_command_palette_005",
+  "createdAt": "2026-04-19T10:03:00.000Z",
+  "candidates": [
+    {
+      "sessionId": "fe_conflict_drawer_004",
+      "title": "Turn conflict rows into a frontend conflict drawer",
+      "score": 15,
+      "reasonSelected": [
+        "file overlap",
+        "branch match"
+      ]
+    },
+    {
+      "sessionId": "fe_session_details_003",
+      "title": "Expand session detail cards into full inspection panes",
+      "score": 14,
+      "reasonSelected": [
+        "file overlap",
+        "recent"
+      ]
+    },
+    {
+      "sessionId": "fe_activity_rail_002",
+      "title": "Add a frontend activity rail for live session movement",
+      "score": 10,
+      "reasonSelected": [
+        "directory overlap"
+      ]
+    }
+  ]
+}
