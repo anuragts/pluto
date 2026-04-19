@@ -82,6 +82,12 @@ export function createIndexEntry(record: SessionRecord): HandoffIndexSession {
       record.title,
       record.summary,
       record.goal ?? "",
+      ...(record.changesMade ?? []),
+      ...record.blockers,
+      ...record.openQuestions,
+      ...record.testsRun,
+      record.resumePrompt,
+      record.branch ?? "",
       ...record.features.flatMap((feature) => [feature.name, feature.why]),
       ...record.decisions.flatMap((decision) => [decision.decision, decision.why]),
     ].flatMap((value) => tokenize(value))

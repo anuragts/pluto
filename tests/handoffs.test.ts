@@ -225,6 +225,113 @@ describe("handoff core", () => {
     expect(result.selectedSessions[0]?.sessionId).toBe("overlap");
   });
 
+  it("prefers semantic query matches over unrelated file-overlap sessions in auto mode", async () => {
+    const projectRoot = await createTempProject();
+    const paths = createHandoffPaths(projectRoot);
+    await ensureHandoffLayout(paths);
+
+    const nameSession = record({
+      sessionId: "name-session",
+      projectRoot,
+      title: "Name introduction from Anurag",
+      summary: "my name is anurag",
+      filesTouched: [{ path: "notes/profile.md", count: 1 }],
+    });
+    const overlapSession = record({
+      sessionId: "overlap-session",
+      projectRoot,
+      title: "React todo conflict work",
+      summary: "resolved app state overlap",
+      filesTouched: [{ path: "fixtures/react-todo-conflict/src/App.jsx", count: 4 }],
+    });
+
+    await saveSessionRecord(paths, nameSession);
+    await saveSessionRecord(paths, overlapSession);
+    const index = await loadIndex(paths);
+    const shortlist = buildPrefetchShortlist(
+      index,
+      "current",
+      {
+        sessionId: "current",
+        branch: "feature/test",
+        dirtyFiles: ["fixtures/react-todo-conflict/src/App.jsx"],
+        fileHints: [],
+        query: "what's my name ? check sessions",
+      },
+      [nameSession, overlapSession]
+    );
+
+    const result = await resolveContext({
+      paths,
+      records: [nameSession, overlapSession],
+      shortlist,
+      args: {
+        mode: "auto",
+        maxSessions: 1,
+        query: "what's my name ? check sessions",
+      },
+      currentContext: {
+        sessionId: "current",
+        branch: "feature/test",
+        dirtyFiles: ["fixtures/react-todo-conflict/src/App.jsx"],
+        fileHints: [],
+        query: "what's my name ? check sessions",
+      },
+    });
+
+    expect(result.selectedSessions[0]?.sessionId).toBe("name-session");
+    expect(result.selectedSessions[0]?.reasonSelected).toContain("query title match");
+  });
+
+  it("builds answer-oriented relevant files and question summary for explicit session queries", async () => {
+    const projectRoot = await createTempProject();
+    const paths = createHandoffPaths(projectRoot);
+    await ensureHandoffLayout(paths);
+
+    const session = record({
+      sessionId: "intro-session",
+      projectRoot,
+      title: "Name introduction from Anurag",
+      summary: "my name is anurag",
+      features: [
+        {
+          name: "profile note",
+          why: "capture a quick intro",
+          status: "done",
+          files: ["notes/profile.md"],
+        },
+      ],
+      filesTouched: [
+        { path: ".handoffs/index.json", count: 4 },
+        { path: "notes/profile.md", count: 1 },
+      ],
+    });
+
+    await saveSessionRecord(paths, session);
+
+    const result = await resolveContext({
+      paths,
+      records: [session],
+      shortlist: null,
+      args: {
+        mode: "ids",
+        sessionIds: ["intro-session"],
+        query: "what files were touched in this session",
+        includeCurrentSession: false,
+      },
+      currentContext: {
+        sessionId: "current",
+        branch: "feature/test",
+        dirtyFiles: [],
+        fileHints: [],
+        query: "what files were touched in this session",
+      },
+    });
+
+    expect(result.relevantFiles.map((file) => file.path)).toEqual(["notes/profile.md"]);
+    expect(result.questionSummary).toContain("notes/profile.md");
+  });
+
   it("detects conflict entries for different rationale on the same file", () => {
     const projectRoot = "/tmp/project";
     const conflicts = detectConflicts([

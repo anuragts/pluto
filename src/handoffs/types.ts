@@ -117,6 +117,8 @@ export interface GetContextResult {
   mergedContextPath: string;
   summary: string;
   topFiles: SessionFileTouch[];
+  relevantFiles: SessionFileTouch[];
+  questionSummary: string;
   conflicts: ConflictEntry[];
   resumePrompt: string;
   warnings: string[];

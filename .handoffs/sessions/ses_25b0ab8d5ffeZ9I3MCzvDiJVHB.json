@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "ses_25b0ab8d5ffeZ9I3MCzvDiJVHB",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": "main",
+  "title": "Interpret session and list touched files",
+  "createdAt": "2026-04-19T08:57:11.210Z",
+  "updatedAt": "2026-04-19T08:58:05.365Z",
+  "source": "opencode-local",
+  "status": "draft",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "Interpret session and list touched files Touched 4 files, including .handoffs/index.json, .handoffs/materialized/context-83fbc27290d6.md, .handoffs/patches/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.md.",
+  "features": [],
+  "decisions": [],
+  "blockers": [],
+  "openQuestions": [],
+  "testsRun": [],
+  "toolsUsed": [
+    {
+      "name": "get_context",
+      "count": 1
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": ".handoffs/index.json",
+      "count": 4
+    },
+    {
+      "path": ".handoffs/materialized/context-83fbc27290d6.md",
+      "count": 4
+    },
+    {
+      "path": ".handoffs/patches/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.md",
+      "count": 4
+    },
+    {
+      "path": ".handoffs/sessions/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.json",
+      "count": 4
+    }
+  ],
+  "resumePrompt": "Continue Interpret session and list touched files. Inspect .handoffs/index.json, .handoffs/materialized/context-83fbc27290d6.md, .handoffs/patches/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.md first."
+}

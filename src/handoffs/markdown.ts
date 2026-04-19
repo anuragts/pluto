@@ -111,11 +111,13 @@ export function renderMergedContextMarkdown(input: {
   dirtyFiles: string[];
   features: Array<{ from: string; feature: SessionFeature }>;
   decisions: Array<{ from: string; decision: SessionDecision }>;
+  relevantFiles: Array<{ path: string; count: number }>;
   topFiles: Array<{ path: string; count: number }>;
   conflicts: ConflictEntry[];
   tests: string[];
   openQuestions: string[];
   resumePrompt: string;
+  questionSummary: string;
 }): string {
   const selected =
     input.selectedSessions.length > 0
@@ -156,6 +158,11 @@ export function renderMergedContextMarkdown(input: {
       ? input.topFiles.map((file, index) => `${index + 1}. ${file.path} - ${file.count}`).join("\n")
       : "1. None";
 
+  const relevantFiles =
+    input.relevantFiles.length > 0
+      ? input.relevantFiles.map((file, index) => `${index + 1}. ${file.path} - ${file.count}`).join("\n")
+      : "1. None";
+
   const conflicts =
     input.conflicts.length > 0
       ? input.conflicts
@@ -188,6 +195,12 @@ export function renderMergedContextMarkdown(input: {
     "",
     "## Decisions",
     decisions,
+    "",
+    "## Question Summary",
+    cleanText(input.questionSummary) || "_Not recorded_",
+    "",
+    "## Relevant Files",
+    relevantFiles,
     "",
     "## Files Touched Most",
     topFiles,

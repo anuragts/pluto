@@ -24,6 +24,131 @@ interface CandidateScore {
   score: number;
   reasons: string[];
   exactOverlap: number;
+  semanticScore: number;
+}
+
+function isInternalHandoffPath(filePath: string): boolean {
+  const normalized = cleanText(filePath);
+  return (
+    normalized.startsWith(".handoffs/") ||
+    normalized.startsWith(".opencode/") ||
+    normalized.startsWith("*** Begin Patch") ||
+    normalized === "." ||
+    normalized.includes("/shortlist-") ||
+    normalized.includes("/context-")
+  );
+}
+
+const QUERY_STOP_WORDS = new Set([
+  "a",
+  "all",
+  "am",
+  "an",
+  "and",
+  "are",
+  "as",
+  "at",
+  "check",
+  "do",
+  "find",
+  "for",
+  "from",
+  "how",
+  "i",
+  "in",
+  "is",
+  "it",
+  "me",
+  "my",
+  "of",
+  "on",
+  "or",
+  "session",
+  "sessions",
+  "tell",
+  "the",
+  "to",
+  "was",
+  "what",
+  "whats",
+  "who",
+  "with",
+]);
+
+function meaningfulQueryTokens(query: string | undefined): string[] {
+  return uniq(
+    tokenize(query ?? "").filter((token) => token.length > 1 && !QUERY_STOP_WORDS.has(token))
+  );
+}
+
+function buildRecordSearchText(record: SessionRecord): {
+  titleText: string;
+  summaryText: string;
+  rationaleText: string;
+  wholeText: string;
+} {
+  const titleText = cleanText(record.title).toLowerCase();
+  const summaryText = cleanText(
+    [
+      record.summary,
+      record.goal ?? "",
+      ...(record.changesMade ?? []),
+      ...record.blockers,
+      ...record.openQuestions,
+      ...record.testsRun,
+      record.resumePrompt,
+    ].join(" ")
+  ).toLowerCase();
+  const rationaleText = cleanText(
+    [
+      record.branch ?? "",
+      ...record.features.flatMap((feature) => [feature.name, feature.why]),
+      ...record.decisions.flatMap((decision) => [decision.decision, decision.why]),
+    ].join(" ")
+  ).toLowerCase();
+  const wholeText = cleanText([titleText, summaryText, rationaleText].join(" ")).toLowerCase();
+  return { titleText, summaryText, rationaleText, wholeText };
+}
+
+function scoreQueryMatch(record: SessionRecord, query: string | undefined): { score: number; reasons: string[] } {
+  const queryTokens = meaningfulQueryTokens(query);
+  if (queryTokens.length === 0) {
+    return { score: 0, reasons: [] };
+  }
+
+  const search = buildRecordSearchText(record);
+  const titleTokens = new Set(tokenize(search.titleText));
+  const summaryTokens = new Set(tokenize(search.summaryText));
+  const rationaleTokens = new Set(tokenize(search.rationaleText));
+  const matchedTitleTokens = queryTokens.filter((token) => titleTokens.has(token));
+  const matchedSummaryTokens = queryTokens.filter((token) => summaryTokens.has(token));
+  const matchedRationaleTokens = queryTokens.filter((token) => rationaleTokens.has(token));
+  const matchedTokens = uniq([
+    ...matchedTitleTokens,
+    ...matchedSummaryTokens,
+    ...matchedRationaleTokens,
+  ]);
+
+  let score = 0;
+  const reasons: string[] = [];
+  if (matchedTitleTokens.length > 0) {
+    score += matchedTitleTokens.length * 8;
+    reasons.push("query title match");
+  }
+  if (matchedSummaryTokens.length > 0) {
+    score += matchedSummaryTokens.length * 5;
+    reasons.push("query summary match");
+  }
+  if (matchedRationaleTokens.length > 0) {
+    score += matchedRationaleTokens.length * 3;
+    reasons.push("query rationale match");
+  }
+  if (matchedTokens.length === queryTokens.length) {
+    score += queryTokens.length > 1 ? 6 : 4;
+    reasons.push("query intent match");
+  }
+
+  return { score, reasons };
 }
 
 function mapTouchCounts(records: SessionRecord[]): Map<string, number> {
@@ -43,6 +168,34 @@ function aggregateTopFiles(records: SessionRecord[]): SessionFileTouch[] {
       count,
     }))
   ).slice(0, 10);
+}
+
+function aggregateRelevantFiles(records: SessionRecord[]): SessionFileTouch[] {
+  const touchCounts = mapTouchCounts(records);
+  const rationaleFiles = uniq(
+    records.flatMap((record) => [
+      ...record.features.flatMap((feature) => feature.files),
+      ...record.decisions.flatMap((decision) => decision.files),
+    ])
+  ).filter((file) => !isInternalHandoffPath(file));
+
+  const touchedProjectFiles = aggregateTopFiles(records).filter((file) => !isInternalHandoffPath(file.path));
+
+  const deduped = new Map<string, SessionFileTouch>();
+  for (const file of rationaleFiles) {
+    deduped.set(file, {
+      path: file,
+      count: touchCounts.get(file) ?? 0,
+    });
+  }
+  for (const file of touchedProjectFiles) {
+    if (!deduped.has(file.path)) {
+      deduped.set(file.path, file);
+    }
+  }
+
+  const relevant = Array.from(deduped.values()).slice(0, 10);
+  return relevant.length > 0 ? relevant : aggregateTopFiles(records).slice(0, 10);
 }
 
 function aggregateFeatures(records: SessionRecord[]): Array<{ from: string; feature: SessionFeature }> {
@@ -183,29 +336,22 @@ function scoreRecord(
     reasons.push("finalized");
   }
 
-  const queryTokens = uniq(tokenize(context.query ?? ""));
-  if (queryTokens.length > 0) {
-    const haystack = new Set(
-      tokenize([
-        record.title,
-        record.summary,
-        ...record.features.flatMap((feature) => [feature.name, feature.why]),
-        ...record.decisions.flatMap((decision) => [decision.decision, decision.why]),
-      ].join(" "))
-    );
-
-    if (queryTokens.some((token) => haystack.has(token))) {
-      score += 2;
-      reasons.push("query match");
-    }
-  }
+  const queryMatch = scoreQueryMatch(record, context.query);
+  score += queryMatch.score;
+  reasons.push(...queryMatch.reasons);
 
   if (shortlist?.candidates.some((candidate) => candidate.sessionId === record.sessionId)) {
     score += 1;
     reasons.push("prefetch shortlist");
   }
 
-  return { record, score, reasons: uniq(reasons), exactOverlap };
+  return {
+    record,
+    score,
+    reasons: uniq(reasons),
+    exactOverlap,
+    semanticScore: queryMatch.score,
+  };
 }
 
 export function buildPrefetchShortlist(
@@ -253,11 +399,21 @@ function selectAutoRecords(
   maxSessions: number,
   currentSessionId?: string
 ): SelectedSession[] {
-  return records
+  const queryTokens = meaningfulQueryTokens(context.query);
+  const candidates = records
     .filter((record) => record.sessionId !== currentSessionId)
     .map((record) => scoreRecord(record, context, shortlist))
-    .filter((candidate) => candidate.score > 0)
+    .filter((candidate) => candidate.score > 0);
+
+  const queryMatchedCandidates =
+    queryTokens.length > 0 ? candidates.filter((candidate) => candidate.semanticScore > 0) : [];
+  const rankedCandidates = queryMatchedCandidates.length > 0 ? queryMatchedCandidates : candidates;
+
+  return rankedCandidates
     .sort((left, right) => {
+      if (queryMatchedCandidates.length > 0 && right.semanticScore !== left.semanticScore) {
+        return right.semanticScore - left.semanticScore;
+      }
       if (right.score !== left.score) {
         return right.score - left.score;
       }
@@ -294,16 +450,71 @@ function buildSummary(records: SessionRecord[], conflicts: ConflictEntry[]): str
   return parts.join(" | ");
 }
 
+function buildQuestionSummary(
+  records: SessionRecord[],
+  query: string | undefined,
+  relevantFiles: SessionFileTouch[]
+): string {
+  if (records.length === 0) {
+    return "No matching session handoffs found.";
+  }
+
+  const primary = records[0];
+  const normalizedQuery = cleanText(query).toLowerCase();
+
+  if (normalizedQuery.includes("name")) {
+    const text = cleanText(
+      [
+        primary.title,
+        primary.summary,
+        primary.goal ?? "",
+        ...(primary.changesMade ?? []),
+        ...primary.features.flatMap((feature) => [feature.name, feature.why]),
+        ...primary.decisions.flatMap((decision) => [decision.decision, decision.why]),
+        primary.resumePrompt,
+      ].join(" ")
+    );
+    const explicitName = text.match(/\bmy name is ([a-z][a-z0-9_-]*)\b/i);
+    if (explicitName?.[1]) {
+      return `The stored session context says the name is ${explicitName[1]}.`;
+    }
+    const fromName = text.match(/\bfrom ([A-Z][a-zA-Z0-9_-]*)\b/);
+    if (fromName?.[1]) {
+      return `The stored session context points to the name ${fromName[1]}.`;
+    }
+  }
+
+  if (normalizedQuery.includes("file") && normalizedQuery.includes("touch")) {
+    if (relevantFiles.length > 0) {
+      return `The relevant touched files were ${relevantFiles.map((file) => file.path).join(", ")}.`;
+    }
+    return "No touched files were recorded for the selected sessions.";
+  }
+
+  if (cleanText(primary.summary)) {
+    return cleanText(primary.summary);
+  }
+
+  if (relevantFiles.length > 0) {
+    return `Relevant files from the selected sessions: ${relevantFiles.map((file) => file.path).join(", ")}.`;
+  }
+
+  return "Context loaded, but no concise narrative was recorded.";
+}
+
 export async function buildContextResult(input: {
   paths: HandoffPaths;
   selectedSessions: SelectedSession[];
   records: SessionRecord[];
   currentContext: CurrentContext;
   warnings: string[];
+  query?: string;
 }): Promise<GetContextResult> {
   const topFiles = aggregateTopFiles(input.records);
+  const relevantFiles = aggregateRelevantFiles(input.records);
   const conflicts = detectConflicts(input.records);
   const resumePrompt = chooseResumePrompt(input.records);
+  const questionSummary = buildQuestionSummary(input.records, input.query ?? input.currentContext.query, relevantFiles);
   const markdown = renderMergedContextMarkdown({
     selectedSessions: input.selectedSessions,
     currentSessionId: input.currentContext.sessionId,
@@ -311,11 +522,13 @@ export async function buildContextResult(input: {
     dirtyFiles: input.currentContext.dirtyFiles,
     features: aggregateFeatures(input.records),
     decisions: aggregateDecisions(input.records),
+    relevantFiles: relevantFiles.map((file) => ({ path: file.path, count: file.count })),
     topFiles: topFiles.map((file) => ({ path: file.path, count: file.count })),
     conflicts,
     tests: aggregateTests(input.records),
     openQuestions: aggregateOpenQuestions(input.records),
     resumePrompt,
+    questionSummary,
   });
 
   const hash = shortHash(
@@ -333,6 +546,8 @@ export async function buildContextResult(input: {
     mergedContextPath: path.relative(input.paths.root, mergedContextPath).split(path.sep).join("/"),
     summary: buildSummary(input.records, conflicts),
     topFiles,
+    relevantFiles,
+    questionSummary,
     conflicts,
     resumePrompt,
     warnings: input.warnings,
@@ -416,6 +631,7 @@ export async function resolveContext(input: {
     records: selectedRecords,
     currentContext: input.currentContext,
     warnings,
+    query: input.args.query,
   });
 }
 

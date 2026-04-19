@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "projectRoot": "/Users/anurag/kafka/pluto",
-  "updatedAt": "2026-04-19T08:22:36.003Z",
+  "updatedAt": "2026-04-19T09:05:05.598Z",
   "sessions": {
     "demo_todo_filters_001": {
       "sessionId": "demo_todo_filters_001",
@@ -87,6 +87,257 @@
         "todo",
         "working-set-editor"
       ]
+    },
+    "ses_25b14b7c3ffeogSSLFMYkK02ZA": {
+      "sessionId": "ses_25b14b7c3ffeogSSLFMYkK02ZA",
+      "title": "Intro message from Anurag",
+      "branch": "main",
+      "updatedAt": "2026-04-19T08:46:18.368Z",
+      "status": "draft",
+      "filesTouched": [
+        {
+          "path": ".handoffs/index.json",
+          "count": 1
+        },
+        {
+          "path": ".handoffs/patches/ses_25b14b7c3ffeogSSLFMYkK02ZA.md",
+          "count": 1
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b14b7c3ffeogSSLFMYkK02ZA.json",
+          "count": 1
+        }
+      ],
+      "keywords": [
+        ".handoffs/index.json",
+        ".handoffs/patches/ses_25b14b7c3ffeogsslfmykk02za.md",
+        ".handoffs/sessions/ses_25b14b7c3ffeogsslfmykk02za.json.",
+        "3",
+        "anurag",
+        "files",
+        "from",
+        "including",
+        "intro",
+        "message",
+        "touched"
+      ]
+    },
+    "ses_25b147968ffeWyIfv4fRz5bJOS": {
+      "sessionId": "ses_25b147968ffeWyIfv4fRz5bJOS",
+      "title": "Backfill recent session import report",
+      "branch": "main",
+      "updatedAt": "2026-04-19T08:48:36.356Z",
+      "status": "draft",
+      "filesTouched": [
+        {
+          "path": ".handoffs/index.json",
+          "count": 8
+        },
+        {
+          "path": ".handoffs/patches/ses_25b147968ffeWyIfv4fRz5bJOS.md",
+          "count": 8
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b147968ffeWyIfv4fRz5bJOS.json",
+          "count": 8
+        },
+        {
+          "path": ".handoffs/cache/shortlist-ses_25b14b7c3ffeogSSLFMYkK02ZA.json",
+          "count": 5
+        }
+      ],
+      "keywords": [
+        ".handoffs/index.json",
+        ".handoffs/patches/ses_25b147968ffewyifv4frz5bjos.md",
+        ".handoffs/sessions/ses_25b147968ffewyifv4frz5bjos.json.",
+        "3",
+        "backfill",
+        "files",
+        "import",
+        "including",
+        "recent",
+        "report",
+        "session",
+        "touched"
+      ]
+    },
+    "ses_25b1244c4ffexf4EjiqiEaYeW1": {
+      "sessionId": "ses_25b1244c4ffexf4EjiqiEaYeW1",
+      "title": "Interpreting session selection command",
+      "branch": "main",
+      "updatedAt": "2026-04-19T08:49:24.524Z",
+      "status": "draft",
+      "filesTouched": [
+        {
+          "path": ".handoffs/index.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-3cfb18bfe8a8.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b1244c4ffexf4EjiqiEaYeW1.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b1244c4ffexf4EjiqiEaYeW1.json",
+          "count": 2
+        }
+      ],
+      "keywords": [
+        ".handoffs/index.json",
+        ".handoffs/materialized/context-3cfb18bfe8a8.md",
+        ".handoffs/patches/ses_25b1244c4ffexf4ejiqieayew1.md.",
+        "4",
+        "command",
+        "files",
+        "including",
+        "interpreting",
+        "selection",
+        "session",
+        "touched"
+      ]
+    },
+    "ses_25b0df8d2ffefv5YQQI4M2RXhQ": {
+      "sessionId": "ses_25b0df8d2ffefv5YQQI4M2RXhQ",
+      "title": "Parsing session context and resume options",
+      "branch": "main",
+      "updatedAt": "2026-04-19T08:55:19.986Z",
+      "status": "draft",
+      "filesTouched": [
+        {
+          "path": ".handoffs/index.json",
+          "count": 5
+        },
+        {
+          "path": ".handoffs/materialized/context-ecf4e15e26fb.md",
+          "count": 5
+        },
+        {
+          "path": ".handoffs/patches/ses_25b0df8d2ffefv5YQQI4M2RXhQ.md",
+          "count": 5
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b0df8d2ffefv5YQQI4M2RXhQ.json",
+          "count": 5
+        },
+        {
+          "path": ".handoffs/materialized/context-8ab31ac19acb.md",
+          "count": 2
+        }
+      ],
+      "keywords": [
+        ".handoffs/index.json",
+        ".handoffs/materialized/context-ecf4e15e26fb.md",
+        ".handoffs/patches/ses_25b0df8d2ffefv5yqqi4m2rxhq.md",
+        ".handoffs/patches/ses_25b0df8d2ffefv5yqqi4m2rxhq.md.",
+        "4",
+        "and",
+        "context",
+        "continue",
+        "files",
+        "first.",
+        "including",
+        "inspect",
+        "main",
+        "options",
+        "options.",
+        "parsing",
+        "resume",
+        "session",
+        "touched"
+      ]
+    },
+    "ses_25b0ab8d5ffeZ9I3MCzvDiJVHB": {
+      "sessionId": "ses_25b0ab8d5ffeZ9I3MCzvDiJVHB",
+      "title": "Interpret session and list touched files",
+      "branch": "main",
+      "updatedAt": "2026-04-19T08:58:05.365Z",
+      "status": "draft",
+      "filesTouched": [
+        {
+          "path": ".handoffs/index.json",
+          "count": 4
+        },
+        {
+          "path": ".handoffs/materialized/context-83fbc27290d6.md",
+          "count": 4
+        },
+        {
+          "path": ".handoffs/patches/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.md",
+          "count": 4
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.json",
+          "count": 4
+        }
+      ],
+      "keywords": [
+        ".handoffs/index.json",
+        ".handoffs/materialized/context-83fbc27290d6.md",
+        ".handoffs/patches/ses_25b0ab8d5ffez9i3mczvdijvhb.md",
+        ".handoffs/patches/ses_25b0ab8d5ffez9i3mczvdijvhb.md.",
+        "4",
+        "and",
+        "continue",
+        "files",
+        "files.",
+        "first.",
+        "including",
+        "inspect",
+        "interpret",
+        "list",
+        "main",
+        "session",
+        "touched"
+      ]
+    },
+    "ses_25b03b72effexojiCEHKQjv8zt": {
+      "sessionId": "ses_25b03b72effexojiCEHKQjv8zt",
+      "title": "Parsing session IDs and follow-up query",
+      "branch": "main",
+      "updatedAt": "2026-04-19T09:05:05.597Z",
+      "status": "draft",
+      "filesTouched": [
+        {
+          "path": ".handoffs/index.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-9c2eba8d643f.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b03b72effexojiCEHKQjv8zt.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b03b72effexojiCEHKQjv8zt.json",
+          "count": 2
+        }
+      ],
+      "keywords": [
+        ".handoffs/index.json",
+        ".handoffs/materialized/context-9c2eba8d643f.md",
+        ".handoffs/patches/ses_25b03b72effexojicehkqjv8zt.md",
+        ".handoffs/patches/ses_25b03b72effexojicehkqjv8zt.md.",
+        "4",
+        "and",
+        "continue",
+        "files",
+        "first.",
+        "follow-up",
+        "ids",
+        "including",
+        "inspect",
+        "main",
+        "parsing",
+        "query",
+        "query.",
+        "session",
+        "touched"
+      ]
     }
   },
   "files": {
@@ -95,6 +346,68 @@
       "demo_todo_inline_edit_001",
       "demo_todo_bulk_actions_001",
       "demo_todo_search_persist_001"
+    ],
+    ".handoffs/index.json": [
+      "ses_25b03b72effexojiCEHKQjv8zt",
+      "ses_25b0ab8d5ffeZ9I3MCzvDiJVHB",
+      "ses_25b0df8d2ffefv5YQQI4M2RXhQ",
+      "ses_25b1244c4ffexf4EjiqiEaYeW1",
+      "ses_25b147968ffeWyIfv4fRz5bJOS",
+      "ses_25b14b7c3ffeogSSLFMYkK02ZA"
+    ],
+    ".handoffs/patches/ses_25b14b7c3ffeogSSLFMYkK02ZA.md": [
+      "ses_25b14b7c3ffeogSSLFMYkK02ZA"
+    ],
+    ".handoffs/sessions/ses_25b14b7c3ffeogSSLFMYkK02ZA.json": [
+      "ses_25b14b7c3ffeogSSLFMYkK02ZA"
+    ],
+    ".handoffs/patches/ses_25b147968ffeWyIfv4fRz5bJOS.md": [
+      "ses_25b147968ffeWyIfv4fRz5bJOS"
+    ],
+    ".handoffs/sessions/ses_25b147968ffeWyIfv4fRz5bJOS.json": [
+      "ses_25b147968ffeWyIfv4fRz5bJOS"
+    ],
+    ".handoffs/cache/shortlist-ses_25b14b7c3ffeogSSLFMYkK02ZA.json": [
+      "ses_25b147968ffeWyIfv4fRz5bJOS"
+    ],
+    ".handoffs/materialized/context-3cfb18bfe8a8.md": [
+      "ses_25b1244c4ffexf4EjiqiEaYeW1"
+    ],
+    ".handoffs/patches/ses_25b1244c4ffexf4EjiqiEaYeW1.md": [
+      "ses_25b1244c4ffexf4EjiqiEaYeW1"
+    ],
+    ".handoffs/sessions/ses_25b1244c4ffexf4EjiqiEaYeW1.json": [
+      "ses_25b1244c4ffexf4EjiqiEaYeW1"
+    ],
+    ".handoffs/materialized/context-ecf4e15e26fb.md": [
+      "ses_25b0df8d2ffefv5YQQI4M2RXhQ"
+    ],
+    ".handoffs/patches/ses_25b0df8d2ffefv5YQQI4M2RXhQ.md": [
+      "ses_25b0df8d2ffefv5YQQI4M2RXhQ"
+    ],
+    ".handoffs/sessions/ses_25b0df8d2ffefv5YQQI4M2RXhQ.json": [
+      "ses_25b0df8d2ffefv5YQQI4M2RXhQ"
+    ],
+    ".handoffs/materialized/context-8ab31ac19acb.md": [
+      "ses_25b0df8d2ffefv5YQQI4M2RXhQ"
+    ],
+    ".handoffs/materialized/context-83fbc27290d6.md": [
+      "ses_25b0ab8d5ffeZ9I3MCzvDiJVHB"
+    ],
+    ".handoffs/patches/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.md": [
+      "ses_25b0ab8d5ffeZ9I3MCzvDiJVHB"
+    ],
+    ".handoffs/sessions/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.json": [
+      "ses_25b0ab8d5ffeZ9I3MCzvDiJVHB"
+    ],
+    ".handoffs/materialized/context-9c2eba8d643f.md": [
+      "ses_25b03b72effexojiCEHKQjv8zt"
+    ],
+    ".handoffs/patches/ses_25b03b72effexojiCEHKQjv8zt.md": [
+      "ses_25b03b72effexojiCEHKQjv8zt"
+    ],
+    ".handoffs/sessions/ses_25b03b72effexojiCEHKQjv8zt.json": [
+      "ses_25b03b72effexojiCEHKQjv8zt"
     ]
   }
 }
