@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "projectRoot": "/Users/anurag/kafka/pluto",
-  "updatedAt": "2026-04-19T10:06:56.462Z",
+  "updatedAt": "2026-04-19T10:21:30.580Z",
   "sessions": {
     "fe_workspace_shell_001": {
       "sessionId": "fe_workspace_shell_001",
@@ -3444,6 +3444,518 @@
         "work.",
         "would"
       ]
+    },
+    "ses_25ad8ba7bffez9KKmonlUypv7D": {
+      "sessionId": "ses_25ad8ba7bffez9KKmonlUypv7D",
+      "title": "Sessions context filter parsing and report",
+      "branch": "main",
+      "updatedAt": "2026-04-19T10:10:35.833Z",
+      "status": "draft",
+      "filesTouched": [
+        {
+          "path": ".handoffs/index.json",
+          "count": 5
+        },
+        {
+          "path": ".handoffs/patches/ses_25ad8ba7bffez9KKmonlUypv7D.md",
+          "count": 5
+        },
+        {
+          "path": ".handoffs/sessions/ses_25ad8ba7bffez9KKmonlUypv7D.json",
+          "count": 5
+        },
+        {
+          "path": ".handoffs/cache/shortlist-fe_command_palette_005.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/cache/shortlist-fe_session_compare_018.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/cache/shortlist-fe_working_set_merge_013.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/cache/shortlist-ses_25ad8ba7bffez9KKmonlUypv7D.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/cache/shortlist-ses_25af724e1ffeHibxii8momPCBX.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-1cb741d6778b.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-26c419799423.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-42153e87e284.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-68c08c26354e.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-8b2e50d0a3bc.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-dashboard-shell-and-conflicts.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-e0b024a6290e.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-management-ui-next-steps.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/materialized/context-react-jsx-working-set.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/demo_todo_bulk_actions_001.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/demo_todo_conflict_repro_001.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/demo_todo_filters_001.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/demo_todo_inline_edit_001.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/demo_todo_review_toolbar_001.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/demo_todo_search_persist_001.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/demo_todo_working_set_editor_001.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/example-auto-backfill.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_activity_rail_002.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_api_filters_017.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_bulk_actions_011.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_command_palette_005.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_conflict_drawer_004.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_conflict_repro_015.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_data_contracts_006.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_file_map_007.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_handoff_timeline_020.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_inline_edit_010.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_onboarding_flow_019.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_peer_console_008.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_review_toolbar_014.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_search_persist_012.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_session_compare_018.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_session_details_003.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_triage_tabs_009.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_ui_polish_016.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_working_set_merge_013.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/fe_workspace_shell_001.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25af724e1ffeHibxii8momPCBX.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b03b72effexojiCEHKQjv8zt.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b0df8d2ffefv5YQQI4M2RXhQ.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b1244c4ffexf4EjiqiEaYeW1.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b147968ffeWyIfv4fRz5bJOS.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b14b7c3ffeogSSLFMYkK02ZA.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b7535d1ffe4Is5NNlHq60EMU.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b7f801fffexEzFA6OG5pKcHW.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b86f7bfffeKo2HR3C8k4qTR1.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b8f02d3ffeiP7T7syKpY7XJL.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b95914fffeTUs9uLqQEJ9gCj.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25b9aa596ffeadBO7fymMTBmLB.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25bb946f4ffeK8FC9Gl0ewM5Kn.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/patches/ses_25bba1990ffekYhB0DisffMNGw.md",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/demo_todo_bulk_actions_001.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/demo_todo_conflict_repro_001.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/demo_todo_filters_001.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/demo_todo_inline_edit_001.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/demo_todo_review_toolbar_001.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/demo_todo_search_persist_001.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/demo_todo_working_set_editor_001.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/example-auto-backfill.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_activity_rail_002.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_api_filters_017.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_bulk_actions_011.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_command_palette_005.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_conflict_drawer_004.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_conflict_repro_015.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_data_contracts_006.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_file_map_007.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_handoff_timeline_020.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_inline_edit_010.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_onboarding_flow_019.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_peer_console_008.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_review_toolbar_014.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_search_persist_012.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_session_compare_018.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_session_details_003.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_triage_tabs_009.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_ui_polish_016.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_working_set_merge_013.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/fe_workspace_shell_001.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25af724e1ffeHibxii8momPCBX.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b03b72effexojiCEHKQjv8zt.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b0df8d2ffefv5YQQI4M2RXhQ.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b1244c4ffexf4EjiqiEaYeW1.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b147968ffeWyIfv4fRz5bJOS.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b14b7c3ffeogSSLFMYkK02ZA.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b7535d1ffe4Is5NNlHq60EMU.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b7f801fffexEzFA6OG5pKcHW.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b86f7bfffeKo2HR3C8k4qTR1.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b8f02d3ffeiP7T7syKpY7XJL.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b95914fffeTUs9uLqQEJ9gCj.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25b9aa596ffeadBO7fymMTBmLB.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25bb946f4ffeK8FC9Gl0ewM5Kn.json",
+          "count": 2
+        },
+        {
+          "path": ".handoffs/sessions/ses_25bba1990ffekYhB0DisffMNGw.json",
+          "count": 2
+        },
+        {
+          "path": "package.json",
+          "count": 2
+        },
+        {
+          "path": "scripts/seed-frontend-sessions.ts",
+          "count": 2
+        },
+        {
+          "path": "tsconfig.json",
+          "count": 2
+        }
+      ],
+      "keywords": [
+        ".handoffs/index.json",
+        ".handoffs/patches/ses_25ad8ba7bffez9kkmonluypv7d.md",
+        ".handoffs/sessions/ses_25ad8ba7bffez9kkmonluypv7d.json",
+        ".handoffs/sessions/ses_25ad8ba7bffez9kkmonluypv7d.json.",
+        "3",
+        "and",
+        "context",
+        "continue",
+        "files",
+        "filter",
+        "first.",
+        "including",
+        "inspect",
+        "main",
+        "parsing",
+        "report",
+        "report.",
+        "sessions",
+        "touched"
+      ]
+    },
+    "ses_25ac48418ffefLyRLmYQ0sPASX": {
+      "sessionId": "ses_25ac48418ffefLyRLmYQ0sPASX",
+      "title": "Interpreting auto debug session context command",
+      "branch": "main",
+      "updatedAt": "2026-04-19T10:21:30.579Z",
+      "status": "draft",
+      "filesTouched": [
+        {
+          "path": ".handoffs/index.json",
+          "count": 8
+        },
+        {
+          "path": ".handoffs/materialized/context-9d0aa8a1d34f.md",
+          "count": 8
+        },
+        {
+          "path": ".handoffs/patches/ses_25ac48418ffefLyRLmYQ0sPASX.md",
+          "count": 8
+        },
+        {
+          "path": ".handoffs/sessions/ses_25ac48418ffefLyRLmYQ0sPASX.json",
+          "count": 8
+        },
+        {
+          "path": ".handoffs/materialized/context-65740c77559c.md",
+          "count": 5
+        },
+        {
+          "path": "PROMPT.md",
+          "count": 5
+        },
+        {
+          "path": ".handoffs/materialized/context-96935192bce3.md",
+          "count": 2
+        }
+      ],
+      "keywords": [
+        ".handoffs/index.json",
+        ".handoffs/materialized/context-9d0aa8a1d34f.md",
+        ".handoffs/patches/ses_25ac48418ffeflyrlmyq0spasx.md",
+        ".handoffs/patches/ses_25ac48418ffeflyrlmyq0spasx.md.",
+        "4",
+        "auto",
+        "command",
+        "command.",
+        "context",
+        "continue",
+        "debug",
+        "files",
+        "first.",
+        "including",
+        "inspect",
+        "interpreting",
+        "main",
+        "session",
+        "touched"
+      ]
     }
   },
   "files": {
@@ -3529,6 +4041,343 @@
     ],
     "README.md": [
       "fe_conflict_repro_015"
+    ],
+    ".handoffs/index.json": [
+      "ses_25ac48418ffefLyRLmYQ0sPASX",
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25ad8ba7bffez9KKmonlUypv7D.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25ad8ba7bffez9KKmonlUypv7D.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/cache/shortlist-fe_command_palette_005.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/cache/shortlist-fe_session_compare_018.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/cache/shortlist-fe_working_set_merge_013.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/cache/shortlist-ses_25ad8ba7bffez9KKmonlUypv7D.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/cache/shortlist-ses_25af724e1ffeHibxii8momPCBX.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-1cb741d6778b.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-26c419799423.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-42153e87e284.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-68c08c26354e.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-8b2e50d0a3bc.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-dashboard-shell-and-conflicts.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-e0b024a6290e.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-management-ui-next-steps.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-react-jsx-working-set.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/demo_todo_bulk_actions_001.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/demo_todo_conflict_repro_001.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/demo_todo_filters_001.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/demo_todo_inline_edit_001.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/demo_todo_review_toolbar_001.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/demo_todo_search_persist_001.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/demo_todo_working_set_editor_001.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/example-auto-backfill.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_activity_rail_002.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_api_filters_017.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_bulk_actions_011.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_command_palette_005.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_conflict_drawer_004.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_conflict_repro_015.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_data_contracts_006.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_file_map_007.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_handoff_timeline_020.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_inline_edit_010.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_onboarding_flow_019.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_peer_console_008.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_review_toolbar_014.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_search_persist_012.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_session_compare_018.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_session_details_003.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_triage_tabs_009.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_ui_polish_016.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_working_set_merge_013.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/fe_workspace_shell_001.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25af724e1ffeHibxii8momPCBX.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b03b72effexojiCEHKQjv8zt.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b0df8d2ffefv5YQQI4M2RXhQ.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b1244c4ffexf4EjiqiEaYeW1.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b147968ffeWyIfv4fRz5bJOS.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b14b7c3ffeogSSLFMYkK02ZA.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b7535d1ffe4Is5NNlHq60EMU.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b7f801fffexEzFA6OG5pKcHW.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b86f7bfffeKo2HR3C8k4qTR1.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b8f02d3ffeiP7T7syKpY7XJL.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b95914fffeTUs9uLqQEJ9gCj.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25b9aa596ffeadBO7fymMTBmLB.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25bb946f4ffeK8FC9Gl0ewM5Kn.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/patches/ses_25bba1990ffekYhB0DisffMNGw.md": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/demo_todo_bulk_actions_001.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/demo_todo_conflict_repro_001.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/demo_todo_filters_001.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/demo_todo_inline_edit_001.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/demo_todo_review_toolbar_001.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/demo_todo_search_persist_001.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/demo_todo_working_set_editor_001.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/example-auto-backfill.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_activity_rail_002.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_api_filters_017.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_bulk_actions_011.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_command_palette_005.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_conflict_drawer_004.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_conflict_repro_015.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_data_contracts_006.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_file_map_007.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_handoff_timeline_020.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_inline_edit_010.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_onboarding_flow_019.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_peer_console_008.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_review_toolbar_014.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_search_persist_012.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_session_compare_018.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_session_details_003.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_triage_tabs_009.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_ui_polish_016.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_working_set_merge_013.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/fe_workspace_shell_001.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25af724e1ffeHibxii8momPCBX.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b03b72effexojiCEHKQjv8zt.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b0ab8d5ffeZ9I3MCzvDiJVHB.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b0df8d2ffefv5YQQI4M2RXhQ.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b1244c4ffexf4EjiqiEaYeW1.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b147968ffeWyIfv4fRz5bJOS.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b14b7c3ffeogSSLFMYkK02ZA.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b7535d1ffe4Is5NNlHq60EMU.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b7f801fffexEzFA6OG5pKcHW.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b86f7bfffeKo2HR3C8k4qTR1.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b8f02d3ffeiP7T7syKpY7XJL.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b95914fffeTUs9uLqQEJ9gCj.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25b9aa596ffeadBO7fymMTBmLB.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25bb946f4ffeK8FC9Gl0ewM5Kn.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/sessions/ses_25bba1990ffekYhB0DisffMNGw.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    "package.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    "scripts/seed-frontend-sessions.ts": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    "tsconfig.json": [
+      "ses_25ad8ba7bffez9KKmonlUypv7D"
+    ],
+    ".handoffs/materialized/context-9d0aa8a1d34f.md": [
+      "ses_25ac48418ffefLyRLmYQ0sPASX"
+    ],
+    ".handoffs/patches/ses_25ac48418ffefLyRLmYQ0sPASX.md": [
+      "ses_25ac48418ffefLyRLmYQ0sPASX"
+    ],
+    ".handoffs/sessions/ses_25ac48418ffefLyRLmYQ0sPASX.json": [
+      "ses_25ac48418ffefLyRLmYQ0sPASX"
+    ],
+    ".handoffs/materialized/context-65740c77559c.md": [
+      "ses_25ac48418ffefLyRLmYQ0sPASX"
+    ],
+    "PROMPT.md": [
+      "ses_25ac48418ffefLyRLmYQ0sPASX"
+    ],
+    ".handoffs/materialized/context-96935192bce3.md": [
+      "ses_25ac48418ffefLyRLmYQ0sPASX"
     ]
   }
 }

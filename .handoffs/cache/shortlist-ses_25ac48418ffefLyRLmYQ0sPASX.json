@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "ses_25ac48418ffefLyRLmYQ0sPASX",
+  "createdAt": "2026-04-19T10:13:52.286Z",
+  "candidates": [
+    {
+      "sessionId": "ses_25ad8ba7bffez9KKmonlUypv7D",
+      "title": "Sessions context filter parsing and report",
+      "score": 23,
+      "reasonSelected": [
+        "file overlap",
+        "directory overlap",
+        "branch match",
+        "recent"
+      ]
+    },
+    {
+      "sessionId": "fe_conflict_repro_015",
+      "title": "Capture a realistic JSX overlap repro for handoff inspection",
+      "score": 6,
+      "reasonSelected": [
+        "directory overlap",
+        "recent",
+        "finalized"
+      ]
+    },
+    {
+      "sessionId": "fe_review_toolbar_014",
+      "title": "Build a JSX review toolbar on top of the integrated working set",
+      "score": 6,
+      "reasonSelected": [
+        "directory overlap",
+        "recent",
+        "finalized"
+      ]
+    },
+    {
+      "sessionId": "fe_search_persist_012",
+      "title": "Add search and local persistence to the JSX triage board",
+      "score": 6,
+      "reasonSelected": [
+        "directory overlap",
+        "recent",
+        "finalized"
+      ]
+    },
+    {
+      "sessionId": "fe_bulk_actions_011",
+      "title": "Add bulk review actions to the shared JSX todo surface",
+      "score": 6,
+      "reasonSelected": [
+        "directory overlap",
+        "recent",
+        "finalized"
+      ]
+    },
+    {
+      "sessionId": "fe_inline_edit_010",
+      "title": "Layer inline editing on top of the JSX triage flow",
+      "score": 6,
+      "reasonSelected": [
+        "directory overlap",
+        "recent",
+        "finalized"
+      ]
+    },
+    {
+      "sessionId": "fe_triage_tabs_009",
+      "title": "Add JSX triage tabs to the React todo fixture",
+      "score": 6,
+      "reasonSelected": [
+        "directory overlap",
+        "recent",
+        "finalized"
+      ]
+    },
+    {
+      "sessionId": "fe_file_map_007",
+      "title": "Refine the frontend file map for session hotspots",
+      "score": 6,
+      "reasonSelected": [
+        "directory overlap",
+        "recent",
+        "finalized"
+      ]
+    }
+  ]
+}

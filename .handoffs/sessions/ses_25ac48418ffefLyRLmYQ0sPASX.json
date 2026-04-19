@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "ses_25ac48418ffefLyRLmYQ0sPASX",
+  "projectRoot": "/Users/anurag/kafka/pluto",
+  "branch": "main",
+  "title": "Interpreting auto debug session context command",
+  "createdAt": "2026-04-19T10:13:52.231Z",
+  "updatedAt": "2026-04-19T10:21:30.579Z",
+  "source": "opencode-local",
+  "status": "draft",
+  "parentSessionIds": [],
+  "shareUrl": null,
+  "summary": "Interpreting auto debug session context command Touched 4 files, including .handoffs/index.json, .handoffs/materialized/context-9d0aa8a1d34f.md, .handoffs/patches/ses_25ac48418ffefLyRLmYQ0sPASX.md.",
+  "features": [],
+  "decisions": [],
+  "blockers": [],
+  "openQuestions": [],
+  "testsRun": [],
+  "toolsUsed": [
+    {
+      "name": "get_context",
+      "count": 3
+    }
+  ],
+  "filesTouched": [
+    {
+      "path": ".handoffs/index.json",
+      "count": 8
+    },
+    {
+      "path": ".handoffs/materialized/context-9d0aa8a1d34f.md",
+      "count": 8
+    },
+    {
+      "path": ".handoffs/patches/ses_25ac48418ffefLyRLmYQ0sPASX.md",
+      "count": 8
+    },
+    {
+      "path": ".handoffs/sessions/ses_25ac48418ffefLyRLmYQ0sPASX.json",
+      "count": 8
+    },
+    {
+      "path": ".handoffs/materialized/context-65740c77559c.md",
+      "count": 5
+    },
+    {
+      "path": "PROMPT.md",
+      "count": 5
+    },
+    {
+      "path": ".handoffs/materialized/context-96935192bce3.md",
+      "count": 2
+    }
+  ],
+  "resumePrompt": "Continue Interpreting auto debug session context command. Inspect .handoffs/index.json, .handoffs/materialized/context-9d0aa8a1d34f.md, .handoffs/patches/ses_25ac48418ffefLyRLmYQ0sPASX.md first."
+}
